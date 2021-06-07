@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { Signature } from '../components/signature';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span className={styles.logo}>
-          <Image src="/signature.svg" alt="Chris LoPresto's signature" width={118} height={40} />
+          <Signature />
         </span>
       </footer>
     </div>
