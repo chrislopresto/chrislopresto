@@ -9,12 +9,6 @@
   "engines": {
     "node": ">=14"
   },
-  "workspaces": {
-    "packages": [
-      "libs/*",
-      "apps/*"
-    ]
-  },
   "scripts": {
     "format:check": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,html,css,json}\" --check",
     "format:write": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,html,css,json}\" --write",

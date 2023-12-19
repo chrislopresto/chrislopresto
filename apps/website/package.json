@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "yarn storybook:build ; touch ./public/storybook/.gitkeep",
+    "prebuild": "pnpm storybook:build ; touch ./public/storybook/.gitkeep",
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
