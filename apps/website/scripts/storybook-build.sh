@@ -1,6 +1,6 @@
 #!/bin/bash
 set -uxo pipefail
 
-yarn storybook:clean
-yarn build-storybook -s public -o ./storybook-build
+pnpm storybook:clean
+pnpm build-storybook -s public -o ./storybook-build
 cp -r storybook-build/. ./public/storybook
