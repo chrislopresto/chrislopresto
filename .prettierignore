@@ -1,6 +1,4 @@
 lerna.json
 package.json
 
-apps/website/.next
-apps/website/public/storybook
-apps/website/storybook-build
+apps/website/public/build
