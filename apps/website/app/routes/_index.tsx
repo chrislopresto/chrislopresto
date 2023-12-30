@@ -30,7 +30,7 @@ export default function Index() {
         <h1 className={css({ fontWeight: 'bold', fontSize: '8xl' })}>Hi there</h1>
         <img src={underConstruction} alt="This site is under construction" />
       </section>
-      <Signature />
+      <Signature css={{ color: 'teal.200' }} />
     </div>
   );
 }
