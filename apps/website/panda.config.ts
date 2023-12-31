@@ -6,8 +6,9 @@ export default defineConfig({
 
   // The extension for the emitted JavaScript files
   outExtension: 'js',
+  jsxFramework: 'react',
   // Where to look for your css declarations
-  include: ['./app/routes/**/*.{ts,tsx,js,jsx}', './app/components/**/*.{ts,tsx,js,jsx}'],
+  include: ['./app/routes/**/*.{ts,tsx}', './app/components/**/*.{ts,tsx}'],
 
   // Files to exclude
   exclude: [],
