@@ -77,7 +77,7 @@ export default function Index() {
       </section>
 
       <Link to="/">
-        <Signature css={{ color: 'teal.800' }} />
+        <Signature css={{ color: 'orange' }} />
       </Link>
     </div>
   );
