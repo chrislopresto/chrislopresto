@@ -17,7 +17,7 @@ const ICON_SIZE = 16;
 
 export default function Index() {
   return (
-    <div>
+    <div className={css({ p: '2', minWidth: '320px', textStyle: 'body' })}>
       <section className={css({ mb: '4' })}>
         <h1
           className={css({ textStyle: 'zazzTitle' })}
