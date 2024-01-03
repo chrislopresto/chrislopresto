@@ -1,7 +1,6 @@
 import type { LinksFunction } from '@remix-run/cloudflare';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import styles from './index.css';
-import { css } from '../styled-system/css';
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -14,7 +13,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className={css({ p: '2', minWidth: '320px', textStyle: 'body' })}>
+      <body>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

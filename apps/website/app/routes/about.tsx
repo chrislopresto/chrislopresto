@@ -12,7 +12,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div>
+    <div className={css({ p: '2', minWidth: '320px', textStyle: 'body' })}>
       <h1
         className={css({ textStyle: 'zazzTitle', mb: '1' })}
         style={{ textShadow: `3px 3px 0px ${token.var('colors.teal.200')}` }}
