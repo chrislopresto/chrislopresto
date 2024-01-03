@@ -24,7 +24,7 @@ export const textStyles = defineTextStyles({
     value: {
       fontFamily: 'Helvetica, sans-serif',
       fontSize: 'sm',
-      lineHeight: 1.2,
+      lineHeight: 1.3,
     },
   },
 });
@@ -75,11 +75,12 @@ export default defineConfig({
         transform(value) {
           if (!value) return {};
           return {
+            marginBottom: 'token(spacing.2)',
             '@breakpoint sm': {
-              marginBottom: 'token(spacing.1)',
+              marginBottom: 'token(spacing.3)',
             },
             '@breakpoint md': {
-              marginBottom: 'token(spacing.3)',
+              marginBottom: 'token(spacing.4)',
             },
             '@breakpoint lg': {
               marginBottom: 'token(spacing.5)',
