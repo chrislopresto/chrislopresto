@@ -1,4 +1,33 @@
-import { defineConfig } from '@pandacss/dev';
+import { defineConfig, defineTextStyles } from '@pandacss/dev';
+
+export const textStyles = defineTextStyles({
+  zazzTitle: {
+    description: 'Zazzy title used for sci-fi-like effect',
+    value: {
+      fontFamily: 'marvinVisionsBig',
+      fontWeight: 'bold',
+      fontSize: { base: '6xl', md: '8xl' },
+      lineHeight: 0.85,
+    },
+  },
+  zazzSubtitle: {
+    description: 'Zazzy subtitle used for sci-fi-like effect',
+    value: {
+      fontFamily: 'marvinVisionsBig',
+      fontWeight: 'bold',
+      fontSize: { base: '2xl', md: '4xl' },
+      lineHeight: 0.85,
+    },
+  },
+  body: {
+    description: 'Body copy',
+    value: {
+      fontFamily: 'Helvetica, sans-serif',
+      fontSize: 'sm',
+      lineHeight: 1.2,
+    },
+  },
+});
 
 export default defineConfig({
   // Whether to use css reset
@@ -15,7 +44,14 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      textStyles,
+      tokens: {
+        fonts: {
+          marvinVisionsBig: { value: 'Marvin Visions Big, sans-serif' },
+        },
+      },
+    },
   },
 
   utilities: {
