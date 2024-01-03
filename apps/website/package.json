@@ -15,10 +15,12 @@
     "storybook:build": "storybook build -o ./public/storybook ; touch ./public/storybook/.gitkeep"
   },
   "dependencies": {
+    "@radix-ui/react-accessible-icon": "^1.0.3",
     "@remix-run/cloudflare": "^2.4.1",
     "@remix-run/cloudflare-pages": "^2.4.1",
     "@remix-run/css-bundle": "^2.4.1",
     "@remix-run/react": "^2.4.1",
+    "@remixicon/react": "^4.0.1",
     "isbot": "^3.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -50,7 +52,7 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "vitest": "^1.1.0",
-    "wrangler": "3.22.1"
+    "wrangler": "3.22.2"
   },
   "engines": {
     "node": ">=18.0.0"

@@ -1,1 +1,14 @@
 @layer reset, base, tokens, recipes, utilities;
+
+@font-face {
+  font-family: 'Marvin Visions Big';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Marvin Visions Big'),
+    url('./fonts/MarvinVisionsBig-Bold.woff2') format('woff2');
+}
+
+:root {
+  --font-marvin-visions-big: 'Marvin Visions Big';
+}
