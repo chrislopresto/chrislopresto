@@ -1,6 +1,7 @@
 import type { MetaFunction } from '@remix-run/cloudflare';
 import { Link } from '@remix-run/react';
 import { Signature } from '../components/signature/signature';
+import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
 import { RiGithubFill, RiLinkedinBoxFill, RiTwitterXFill } from '@remixicon/react';
 import { token } from '../../styled-system/tokens';
@@ -18,27 +19,19 @@ const ICON_SIZE = 16;
 export default function Index() {
   return (
     <div className={css({ p: '2', minWidth: '320px', textStyle: 'body' })}>
-      <section className={css({ mb: '4' })}>
-        <h1
-          className={css({ textStyle: 'zazzTitle' })}
-          style={{ textShadow: `3px 3px 0px ${token.var('colors.teal.200')}` }}
-        >
+      <section className={css({ vr: true })}>
+        <Heading as="h1">
           Chris L<span className={css({ fontSize: { base: '5xl', md: '7xl' } })}>o</span>Presto
-        </h1>
+        </Heading>
         <p className={css({ fontSize: 'sm' })}>Engineering leader. Musician.</p>
       </section>
-      <section className={css({ mb: '4' })}>
-        <h2
-          className={css({ textStyle: 'zazzSubtitle', mb: '2' })}
-          style={{ textShadow: `3px 3px 0px ${token.var('colors.teal.200')}` }}
-        >
-          Hello
-        </h2>
-        <p className={css({ textStyle: 'body', mb: '2' })}>
+      <section className={css({ vr: true })}>
+        <Heading variant="heading">Hello</Heading>
+        <p className={css({ vr: true })}>
           Thanks for stopping by. Back in the day, websites used to greet readers conversationally. In that spirit,
           hello.
         </p>
-        <p className={css({ textStyle: 'body', mb: '2' })}>
+        <p className={css({ vr: true })}>
           <Link
             to="/about"
             className={css({
@@ -46,22 +39,34 @@ export default function Index() {
               mb: '3',
               display: 'block',
               textDecoration: 'underline',
-              _hover: { color: 'sky.600' },
-              _active: { color: 'sky.600' },
-              _focus: { color: 'sky.600' },
+              textUnderlineOffset: '2px',
+              textDecorationStyle: 'dotted',
+              _hover: {
+                color: 'teal.800',
+                textShadow: '0px 2px 4px magenta',
+                textDecorationColor: 'magenta',
+                textDecorationThickness: '1px',
+              },
+              _active: {
+                color: 'teal.800',
+                textShadow: '0px 2px 4px magenta',
+                textDecorationColor: 'magenta',
+                textDecorationThickness: '1px',
+              },
+              _focus: {
+                color: 'teal.800',
+                textShadow: '0px 2px 4px magenta',
+                textDecorationColor: 'magenta',
+                textDecorationThickness: '1px',
+              },
             })}
           >
             Allow me to introduce myself.
           </Link>
         </p>
       </section>
-      <section className={css({ mb: '4' })}>
-        <h2
-          className={css({ textStyle: 'zazzSubtitle', mb: '2' })}
-          style={{ textShadow: `3px 3px 0px ${token.var('colors.teal.200')}` }}
-        >
-          Say hello
-        </h2>
+      <section className={css({ vr: true })}>
+        <Heading variant="heading">Say hello</Heading>
         <a href="https://twitter.com/chrislopresto" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
           <AccessibleIcon label="Twitter X">
             <RiTwitterXFill size={ICON_SIZE} className={css({ mr: '1' })} />

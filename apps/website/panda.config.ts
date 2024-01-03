@@ -1,7 +1,7 @@
 import { defineConfig, defineTextStyles } from '@pandacss/dev';
 
 export const textStyles = defineTextStyles({
-  zazzTitle: {
+  title: {
     description: 'Zazzy title used for sci-fi-like effect',
     value: {
       fontFamily: 'marvinVisionsBig',
@@ -10,13 +10,34 @@ export const textStyles = defineTextStyles({
       lineHeight: 0.85,
     },
   },
-  zazzSubtitle: {
+  subtitle: {
     description: 'Zazzy subtitle used for sci-fi-like effect',
     value: {
       fontFamily: 'marvinVisionsBig',
       fontWeight: 'bold',
       fontSize: { base: '2xl', md: '4xl' },
       lineHeight: 0.85,
+    },
+  },
+  heading: {
+    description: 'Heading used for non-sci-fi-like delineation',
+    value: {
+      fontFamily: 'Helvetica, sans-serif',
+      fontWeight: 'bold',
+      fontSize: 'xl',
+      lineHeight: 'snug',
+    },
+  },
+  subheading: {
+    description: 'Subheading used for further non-sci-fi-like delineation',
+    value: {
+      fontFamily: 'Helvetica, sans-serif',
+      fontWeight: 'bold',
+      fontSize: 'sm',
+      lineHeight: 1.3,
+      textDecoration: 'underline',
+      textDecorationStyle: 'double',
+      textDecorationColor: 'teal.200',
     },
   },
   body: {

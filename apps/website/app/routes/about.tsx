@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/cloudflare';
+import { Heading } from '../components/heading/heading';
 import { Signature } from '../components/signature/signature';
 import { Link } from '@remix-run/react';
 
@@ -13,12 +14,9 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className={css({ p: '2', minWidth: '320px', textStyle: 'body' })}>
-      <h1
-        className={css({ textStyle: 'zazzTitle', mb: '1' })}
-        style={{ textShadow: `3px 3px 0px ${token.var('colors.teal.200')}` }}
-      >
+      <Heading as="h1" css={{ mb: '1' }}>
         About Chris
-      </h1>
+      </Heading>
       <img
         src={chrisLouiseSpin}
         alt="Chris and Louise playing a game of ping pong"
@@ -31,32 +29,32 @@ export default function Index() {
       />
 
       <section>
-        <h2 className={css({ fontWeight: 'bold', fontSize: 'xl', lineHeight: 'snug' })}>Now</h2>
+        <Heading variant="heading">Now</Heading>
         <p className={css({ vr: true })}>
           Chris is a software engineering leader and musician. He lives in New York City with his wife Louise (pictured)
           and Boston Terrier Roland (surprisingly not pictured).
         </p>
-        <h2 className={css({ fontWeight: 'bold', fontSize: 'xl', lineHeight: 'snug' })}>Then</h2>
+        <Heading variant="heading">Then</Heading>
         <p className={css({ vr: true })}>
           Chris LoPresto grew up as an oldest child in Delaware, the oldest state. He picked up degrees in Jazz
           Performance (piano) and Computer Science at Exit 9 of the NJ Turnpike before continuing on up to New York
           City.
         </p>
-        <h2 className={css({ fontWeight: 'bold', fontSize: 'xl', lineHeight: 'snug' })}>Music</h2>
+        <Heading variant="heading">Music</Heading>
         <p className={css({ vr: true })}>
           Chris has performed at iconic venues<sup>1</sup> and dive bars
           <sup>2</sup> around the world
           <sup>3</sup>, most notably with Roc Nation / Epic Records recording artist Hugo. Chris has performed on Late
           Night with David Letterman, Jimmy Kimmel Live!, X Factor, and morning shows that film far too early.
         </p>
-        <h2 className={css({ fontWeight: 'bold', fontSize: 'xl', lineHeight: 'snug' })}>Tech</h2>
+        <Heading variant="heading">Tech</Heading>
         <p className={css({ vr: true })}>
           Chris is an an engineering leader with experience building teams and inspiring change. He has a track record
           of accelerating product teams while leveling up tech teams. Over the course of his career, Chris has played
           with Patriot Missile System schematics, been CTO of a venture funded startup, given conference talks, and
           accrued several stories.
         </p>
-        <h2 className={css({ fontWeight: 'bold', fontSize: 'xl', lineHeight: 'snug' })}>Otherwise</h2>
+        <Heading variant="heading">Otherwise</Heading>
         <p className={css({ vr: true })}>
           More miscellaneously, Chris is an Eagle Scout who has visited 46 of the 50 states and ridden a private
           elevator with a pope
