@@ -1,7 +1,6 @@
 import type { MetaFunction } from '@remix-run/cloudflare';
 import { Link } from '@remix-run/react';
 import { Signature } from '../components/signature/signature';
-import underConstruction from '../images/under-construction.gif';
 import { css } from '../../styled-system/css';
 import { RiGithubFill, RiLinkedinBoxFill, RiTwitterXFill } from '@remixicon/react';
 import { token } from '../../styled-system/tokens';
@@ -18,19 +17,7 @@ const ICON_SIZE = 16;
 
 export default function Index() {
   return (
-    <div className={css({ p: '2', minWidth: '320px' })}>
-      <Link
-        to="/about"
-        className={css({
-          color: 'teal.600',
-          textDecoration: 'underline',
-          _hover: { color: 'sky.600' },
-          _active: { color: 'sky.600' },
-          _focus: { color: 'sky.600' },
-        })}
-      >
-        About
-      </Link>
+    <div>
       <section className={css({ mb: '4' })}>
         <h1
           className={css({ textStyle: 'zazzTitle' })}
@@ -52,9 +39,21 @@ export default function Index() {
           hello.
         </p>
         <p className={css({ textStyle: 'body', mb: '2' })}>
-          Also in that spirit, here's an ostensibly temporary indication that my site will soon have more content.
+          <Link
+            to="/about"
+            className={css({
+              color: 'teal.600',
+              mb: '3',
+              display: 'block',
+              textDecoration: 'underline',
+              _hover: { color: 'sky.600' },
+              _active: { color: 'sky.600' },
+              _focus: { color: 'sky.600' },
+            })}
+          >
+            Allow me to introduce myself.
+          </Link>
         </p>
-        <img src={underConstruction} alt="This site is under construction" />
       </section>
       <section className={css({ mb: '4' })}>
         <h2
@@ -76,7 +75,7 @@ export default function Index() {
           @chrislopresto
         </a>
         <a
-          href="https://www.linkdin.com/in/chrislopresto/"
+          href="https://www.linkedin.com/in/chrislopresto/"
           className={css({ display: 'flex', mb: '1', textStyle: 'body' })}
         >
           <AccessibleIcon label="LinkedIn">
@@ -86,7 +85,7 @@ export default function Index() {
         </a>
       </section>
       <section>
-        <Signature css={{ color: 'teal.200' }} />
+        <Signature css={{ color: 'teal.400' }} />
       </section>
     </div>
   );
