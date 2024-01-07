@@ -1,1 +1,2 @@
 brew 'pnpm'
+brew 'tilt'
