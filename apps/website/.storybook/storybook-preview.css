@@ -1,0 +1,15 @@
+[data-color-mode='light'] {
+  background-color: #f3f4f6;
+}
+
+[data-color-mode='dark'] {
+  background-color: #1f2937;
+}
+
+[data-color-mode='light'] .docs-story {
+  background-color: #f3f4f6;
+}
+
+[data-color-mode='dark'] .docs-story {
+  background-color: #1f2937;
+}

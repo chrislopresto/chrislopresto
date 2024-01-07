@@ -51,25 +51,35 @@ export const textStyles = defineTextStyles({
 });
 
 export default defineConfig({
-  // Whether to use css reset
-  preflight: true,
-
-  // The extension for the emitted JavaScript files
   outExtension: 'js',
+  outdir: 'styled-system',
   jsxFramework: 'react',
-  // Where to look for your css declarations
-  include: ['./app/routes/**/*.{ts,tsx}', './app/components/**/*.{ts,tsx}'],
 
-  // Files to exclude
+  include: ['./app/**/*.{ts,tsx}'],
   exclude: [],
 
-  // Useful for theme customization
+  prefix: 'clop',
+  preflight: true,
+
+  conditions: {
+    extend: {
+      light: '[data-color-mode=light] &',
+      dark: '[data-color-mode=dark] &',
+    },
+  },
+
   theme: {
     extend: {
       textStyles,
       tokens: {
         fonts: {
           marvinVisionsBig: { value: 'Marvin Visions Big, sans-serif' },
+        },
+      },
+      semanticTokens: {
+        colors: {
+          default: { value: { base: '{colors.gray.800}', _light: '{colors.gray.800}', _dark: '{colors.gray.100}' } },
+          background: { value: { base: '{colors.gray.100}', _light: '{colors.gray.100}', _dark: '{colors.gray.800}' } },
         },
       },
     },
@@ -112,6 +122,9 @@ export default defineConfig({
     },
   },
 
-  // The output directory for your css system
-  outdir: 'styled-system',
+  globalCss: {
+    body: {
+      color: 'default',
+    },
+  },
 });

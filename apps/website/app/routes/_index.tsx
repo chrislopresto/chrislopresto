@@ -4,8 +4,8 @@ import { Signature } from '../components/signature/signature';
 import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
 import { RiGithubFill, RiLinkedinBoxFill, RiTwitterXFill } from '@remixicon/react';
-import { token } from '../../styled-system/tokens';
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
+import { useColorScheme } from '../styles/color-scheme';
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,10 +17,16 @@ export const meta: MetaFunction = () => {
 const ICON_SIZE = 16;
 
 export default function Index() {
+  const [colorScheme, setColorScheme] = useColorScheme();
+
   return (
-    <div className={css({ p: '2', minWidth: '320px', textStyle: 'body' })}>
+    <div>
       <section className={css({ vr: true })}>
-        <Heading as="h1">
+        <Heading
+          as="h1"
+          onClick={() => (colorScheme === 'light' ? setColorScheme('dark') : setColorScheme('light'))}
+          css={{ cursor: 'pointer' }}
+        >
           Chris L<span className={css({ fontSize: { base: '5xl', md: '7xl' } })}>o</span>Presto
         </Heading>
         <p className={css({ fontSize: 'sm' })}>Engineering leader. Musician.</p>

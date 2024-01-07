@@ -10,7 +10,7 @@ type ComponentProps = {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 };
 type HeadingVariants = RecipeVariantProps<typeof headingCss>;
-type HeadingProps = ComponentProps & HeadingVariants;
+type HeadingProps = ComponentProps & HeadingVariants & React.HTMLAttributes<HTMLHeadingElement>;
 
 export const headingCss = cva({
   variants: {
