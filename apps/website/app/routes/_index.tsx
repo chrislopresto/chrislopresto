@@ -3,7 +3,14 @@ import { Link } from '@remix-run/react';
 import { Signature } from '../components/signature/signature';
 import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
-import { RiGithubFill, RiLinkedinBoxFill, RiTwitterXFill } from '@remixicon/react';
+import {
+  RiGithubFill,
+  RiLinkedinBoxFill,
+  RiTwitterXFill,
+  RiSunLine,
+  RiMoonLine,
+  RiRefreshLine,
+} from '@remixicon/react';
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { useColorScheme } from '../styles/color-scheme';
 
@@ -17,16 +24,12 @@ export const meta: MetaFunction = () => {
 const ICON_SIZE = 16;
 
 export default function Index() {
-  const [colorScheme, setColorScheme] = useColorScheme();
+  const { toggle, setLight, setDark, matchSystem } = useColorScheme();
 
   return (
     <div>
       <section className={css({ vr: true })}>
-        <Heading
-          as="h1"
-          onClick={() => (colorScheme === 'light' ? setColorScheme('dark') : setColorScheme('light'))}
-          css={{ cursor: 'pointer' }}
-        >
+        <Heading as="h1" onClick={() => toggle()} css={{ cursor: 'pointer' }}>
           Chris L<span className={css({ fontSize: { base: '5xl', md: '7xl' } })}>o</span>Presto
         </Heading>
         <p className={css({ fontSize: 'sm' })}>Engineering leader. Musician.</p>
@@ -94,6 +97,30 @@ export default function Index() {
           </AccessibleIcon>
           chrislopresto
         </a>
+      </section>
+      <section className={css({ vr: true })}>
+        <Heading variant="heading">Appearance</Heading>
+        <AccessibleIcon label="Light theme">
+          <RiSunLine
+            size={ICON_SIZE}
+            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
+            onClick={() => setLight()}
+          />
+        </AccessibleIcon>
+        <AccessibleIcon label="Dark theme">
+          <RiMoonLine
+            size={ICON_SIZE}
+            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
+            onClick={() => setDark()}
+          />
+        </AccessibleIcon>
+        <AccessibleIcon label="Match system">
+          <RiRefreshLine
+            size={ICON_SIZE}
+            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
+            onClick={() => matchSystem()}
+          />
+        </AccessibleIcon>
       </section>
       <section>
         <Signature css={{ color: 'teal.400' }} />

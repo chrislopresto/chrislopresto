@@ -1,4 +1,4 @@
-import { atomWithStorage, createJSONStorage } from 'jotai/utils';
+import { atomWithStorage, createJSONStorage, RESET } from 'jotai/utils';
 import Cookies from 'js-cookie';
 import { useAtom } from 'jotai';
 import { useState, useEffect } from 'react';
@@ -37,5 +37,25 @@ export function useColorScheme() {
     };
   }, [setColorScheme, storedColorScheme]);
 
-  return [colorScheme, setStoredColorScheme] as const;
+  const toggle = () => {
+    return storedColorScheme === 'light' ? setDark() : setLight();
+  };
+
+  const setLight = () => {
+    return setStoredColorScheme('light');
+  };
+  const setDark = () => {
+    return setStoredColorScheme('dark');
+  };
+  const matchSystem = () => {
+    return setStoredColorScheme(RESET);
+  };
+
+  return {
+    colorScheme,
+    toggle,
+    setLight,
+    setDark,
+    matchSystem,
+  } as const;
 }

@@ -17,7 +17,7 @@ const cardImageStyles = css.raw({ borderTopLeftRadius: 4, borderTopRightRadius: 
 export default function Index() {
   return (
     <div>
-      <Heading as="h1" css={{ mb: '1' }}>
+      <Heading variant="heading" as="h1" css={{ mb: '1' }}>
         Thoughts
       </Heading>
 
