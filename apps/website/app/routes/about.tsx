@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className={css({ p: '2', minWidth: '320px', textStyle: 'body' })}>
+    <div>
       <Heading as="h1" css={{ mb: '1' }}>
         About Chris
       </Heading>
