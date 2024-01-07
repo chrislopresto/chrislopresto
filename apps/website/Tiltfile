@@ -1,0 +1,36 @@
+local_resource(
+  'storybook',
+  serve_cmd='pnpm storybook',
+)
+local_resource(
+  'dev-server',
+  serve_cmd='pnpm dev',
+)
+local_resource(
+  'panda',
+  serve_cmd='pnpm panda codegen -w',
+)
+local_resource(
+  'vitest',
+  serve_cmd='pnpm test',
+)
+local_resource(
+  'lint',
+  cmd='pnpm lint',
+  auto_init=False
+)
+local_resource(
+  'build',
+  cmd='pnpm build',
+  auto_init=False
+)
+local_resource(
+  'storybook:build',
+  cmd='pnpm storybook:build',
+  auto_init=False
+)
+local_resource(
+  'serve',
+  cmd='pnpm start',
+  auto_init=False
+)
