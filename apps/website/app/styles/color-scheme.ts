@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import { useAtom } from 'jotai';
 import { useState, useEffect } from 'react';
 
-export type ColorScheme = 'light' | 'dark';
+type ColorScheme = 'light' | 'dark';
 const COLOR_SCHEME_KEY = 'clopColorScheme';
 
 const cookieStorage = createJSONStorage<ColorScheme | undefined>(() => {
@@ -21,24 +21,26 @@ export function useColorScheme() {
   const [colorScheme, setColorScheme] = useState<ColorScheme | undefined>(storedColorScheme);
 
   useEffect(() => {
-    const prefersColorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const systemPreferredColorScheme: ColorScheme = prefersColorSchemeMediaQuery.matches ? 'dark' : 'light';
-    setColorScheme(storedColorScheme || systemPreferredColorScheme);
+    const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const systemColorScheme: ColorScheme = colorSchemeMediaQuery.matches ? 'dark' : 'light';
+    setColorScheme(storedColorScheme || systemColorScheme);
 
     const onPrefersColorSchemeChange = ({ matches }: MediaQueryListEvent): void => {
       const systemPreferredColorScheme: ColorScheme = matches ? 'dark' : 'light';
       setColorScheme(storedColorScheme || systemPreferredColorScheme);
     };
 
-    prefersColorSchemeMediaQuery.addEventListener('change', onPrefersColorSchemeChange);
-
+    colorSchemeMediaQuery.addEventListener('change', onPrefersColorSchemeChange);
     return () => {
-      prefersColorSchemeMediaQuery.removeEventListener('change', onPrefersColorSchemeChange);
+      colorSchemeMediaQuery.removeEventListener('change', onPrefersColorSchemeChange);
     };
   }, [setColorScheme, storedColorScheme]);
 
   const toggle = () => {
-    return storedColorScheme === 'light' ? setDark() : setLight();
+    const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const systemColorScheme: ColorScheme = colorSchemeMediaQuery.matches ? 'dark' : 'light';
+    const currentColorScheme = storedColorScheme || systemColorScheme;
+    return currentColorScheme === 'light' ? setDark() : setLight();
   };
 
   const setLight = () => {
