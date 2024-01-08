@@ -1,20 +1,11 @@
-import { atomWithStorage, createJSONStorage, RESET } from 'jotai/utils';
-import Cookies from 'js-cookie';
+import { atomWithStorage, RESET } from 'jotai/utils';
 import { useAtom } from 'jotai';
 import { useState, useEffect } from 'react';
 
 type ColorScheme = 'light' | 'dark';
-const COLOR_SCHEME_KEY = 'clopColorScheme';
+const COLOR_SCHEME_KEY = '@chrislopresto/website/colorScheme';
 
-const cookieStorage = createJSONStorage<ColorScheme | undefined>(() => {
-  return {
-    getItem: (key) => Cookies.get(key) as ColorScheme,
-    setItem: (key, newValue) => Cookies.set(key, newValue),
-    removeItem: (key) => Cookies.remove(key),
-  };
-});
-
-const colorSchemeAtom = atomWithStorage<ColorScheme | undefined>(COLOR_SCHEME_KEY, undefined, cookieStorage);
+const colorSchemeAtom = atomWithStorage<ColorScheme | undefined>(COLOR_SCHEME_KEY, undefined);
 
 export function useColorScheme() {
   const [storedColorScheme, setStoredColorScheme] = useAtom(colorSchemeAtom);
