@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/namespace */
 import React, { ReactNode } from 'react';
 import { css, cva, type RecipeVariantProps } from '../../../styled-system/css';
 import { SystemStyleObject } from '../../../styled-system/types';

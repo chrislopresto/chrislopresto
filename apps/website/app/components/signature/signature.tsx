@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/namespace */
 import { css } from '../../../styled-system/css';
 import { SystemStyleObject } from '../../../styled-system/types';
 

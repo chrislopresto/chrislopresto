@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/namespace */
 import * as React from 'react';
 import { StoryObj } from '@storybook/react';
 import type { Meta } from '@storybook/react';
