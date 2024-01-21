@@ -32,8 +32,8 @@ export default function Index() {
       <section>
         <Heading variant="heading">Now</Heading>
         <p className={css({ vr: true })}>
-          Chris is a software engineering leader and musician. He lives in New York City with his wife Louise (pictured)
-          and Boston Terrier Roland (surprisingly not pictured).
+          Chris is a software engineering leader and musician. He lives within striking distance of New York City with
+          his wife Louise, daughter Lark, and Boston Terrier Roland.
         </p>
         <Heading variant="heading">Then</Heading>
         <p className={css({ vr: true })}>
@@ -51,9 +51,9 @@ export default function Index() {
         <Heading variant="heading">Tech</Heading>
         <p className={css({ vr: true })}>
           Chris is an an engineering leader with experience building teams and inspiring change. He has a track record
-          of accelerating product teams while leveling up tech teams. Over the course of his career, Chris has played
-          with Patriot Missile System schematics, been CTO of a venture funded startup, given conference talks, and
-          accrued several stories.
+          of accelerating product development while leveling up engineering and design orgs. Over the course of his
+          career, Chris has played with Patriot Missile System schematics, been CTO of a venture funded startup, given
+          conference talks, and accrued several stories.
         </p>
         <Heading variant="heading">Otherwise</Heading>
         <p className={css({ vr: true })}>
@@ -62,9 +62,7 @@ export default function Index() {
           <sup>4</sup>. He is always game to debate which is better, cake or pie
           <sup>5</sup>.
         </p>
-        <Link to="/">
-          <Signature css={{ color: 'lime.500' }} />
-        </Link>
+        <Signature />
       </section>
 
       <section>

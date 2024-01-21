@@ -7,12 +7,11 @@ import { grid, gridItem } from '../../styled-system/patterns';
 
 import emberConf2016Still from '../images/chris-lopresto-speaking-at-ember-conf-2016.jpg';
 import railsConf2018Still from '../images/chris-lopresto-speaking-at-rails-conf-2018.jpg';
+import { Card } from '../components/card/card';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Chris LoPresto | About' }, { name: 'description', content: 'Chris LoPresto bio' }];
 };
-
-const cardImageStyles = css.raw({ borderTopLeftRadius: 4, borderTopRightRadius: 4 });
 
 export default function Index() {
   return (
@@ -31,12 +30,8 @@ export default function Index() {
         <div className={grid({ columns: 2, gap: { base: '5', sm: '4' } })}>
           <div className={gridItem({ colSpan: { base: 3, lg: 1 } })}>
             <Link to="/thoughts/conference-talks/hot-swapping-our-rails-front-end-in-secret">
-              <div>
-                <img
-                  alt="Chris LoPresto speaking at RailsConf 2018"
-                  src={railsConf2018Still}
-                  className={css({ mb: 2, ...cardImageStyles })}
-                />
+              <Card>
+                <Card.Image alt="Chris LoPresto speaking at RailsConf 2018" src={railsConf2018Still} />
                 <div className={css({ p: 4, fontSize: 1 })}>
                   <Heading variant="heading">Hot Swapping Our Rails Front End in Secret</Heading>
                   <Heading variant="subheading" css={{ mb: '1' }}>
@@ -48,17 +43,13 @@ export default function Index() {
                     And make everything responsive. In 8 weeks.
                   </p>
                 </div>
-              </div>
+              </Card>
             </Link>
           </div>
           <div className={gridItem({ colSpan: { base: 3, lg: 1 } })}>
             <Link to="/thoughts/conference-talks/living-style-guide-driven-development">
-              <div>
-                <img
-                  alt="Chris LoPresto speaking at EmberConf 2016"
-                  src={emberConf2016Still}
-                  className={css({ mb: 2, ...cardImageStyles })}
-                />
+              <Card>
+                <Card.Image alt="Chris LoPresto speaking at EmberConf 2016" src={emberConf2016Still} />
                 <div className={css({ p: 4, fontSize: 1 })}>
                   <Heading variant="heading">Living Style Guide Driven Development</Heading>
                   <Heading variant="subheading" css={{ mb: '1' }}>
@@ -69,7 +60,7 @@ export default function Index() {
                     lifetime of a product. Ember tooling and conventions make this easier than you might expect.
                   </p>
                 </div>
-              </div>
+              </Card>
             </Link>
           </div>
         </div>

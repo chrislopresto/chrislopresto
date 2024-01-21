@@ -12,15 +12,14 @@ type ComponentProps = {
 type LinkProps = ComponentProps & React.LinkHTMLAttributes<HTMLAnchorElement>;
 
 const activeCss = css.raw({
-  color: 'teal.800',
-  textShadow: '2px 2px 10px magenta',
-  textDecorationColor: 'magenta',
+  textShadow: '2px 2px 10px token(colors.accent)',
+  textDecorationColor: 'accent',
   textDecorationThickness: '1px',
 });
 
 export const linkCss = css.raw({
-  '&.active': { fontWeight: 'bold', textShadow: '2px 2px 0px token(colors.teal.200)' },
-  color: 'teal.600',
+  '&.active': { fontWeight: 'bold', textShadow: '2px 2px 0px token(colors.accentSecondary)' },
+  color: 'link',
   textDecoration: 'underline',
   textUnderlineOffset: '2px',
   textDecorationStyle: 'dotted',
