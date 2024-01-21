@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@radix-ui/react-accessible-icon": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
     "@remix-run/cloudflare": "^2.5.1",
     "@remix-run/cloudflare-pages": "^2.5.1",
     "@remix-run/css-bundle": "^2.5.1",
@@ -52,6 +53,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "jsdom": "^23.2.0",
     "storybook": "^7.6.10",
+    "storybook-addon-react-router-v6": "^2.0.10",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
     "vitest": "^1.2.1",
