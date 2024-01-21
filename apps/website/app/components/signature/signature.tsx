@@ -5,12 +5,13 @@ type ComponentProps = {
   css?: SystemStyleObject;
   description?: string;
 };
-type SignatureVariants = RecipeVariantProps<typeof signatureVariants>;
+type SignatureVariants = RecipeVariantProps<typeof signatureCss>;
 type SignatureProps = ComponentProps & SignatureVariants & React.SVGAttributes<SVGElement>;
 
-const signatureVariants = cva({
+export const signatureCss = cva({
   variants: {
     variant: {
+      default: {},
       hyper: {
         filter: 'drop-shadow(2px 2px 2px token(colors.teal.200)) drop-shadow(1px 1px 1px token(colors.indigo.400))',
       },
@@ -18,14 +19,14 @@ const signatureVariants = cva({
   },
 });
 
-export function Signature({ css: cssProp = {}, variant, description }: SignatureProps) {
+export function Signature({ css: cssProp = {}, variant = 'default', description }: SignatureProps) {
   return (
     <svg
       role="img"
       viewBox="0, 0, 590, 204"
       width={118}
       height={40}
-      className={css(signatureVariants.raw({ variant }), cssProp)}
+      className={css(signatureCss.raw({ variant }), cssProp)}
     >
       <title>Chris LoPresto</title>
       <desc>{description || "Chris LoPresto's signature"}</desc>
