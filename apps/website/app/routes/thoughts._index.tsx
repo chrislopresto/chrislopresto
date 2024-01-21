@@ -32,7 +32,7 @@ export default function Index() {
             <Link to="/thoughts/hot-swapping-our-rails-front-end-in-secret">
               <Card>
                 <Card.Image alt="Chris LoPresto speaking at RailsConf 2018" src={railsConf2018Still} />
-                <div className={css({ p: 4, fontSize: 1 })}>
+                <Card.Body>
                   <Heading variant="heading">Hot Swapping Our Rails Front End in Secret</Heading>
                   <Heading variant="subheading" css={{ mb: '1' }}>
                     RailsConf 2018
@@ -42,7 +42,7 @@ export default function Index() {
                     Betterment replaced our front end code base to launch our new brand. Across all our apps. In secret.
                     And make everything responsive. In 8 weeks.
                   </p>
-                </div>
+                </Card.Body>
               </Card>
             </Link>
           </div>
@@ -50,7 +50,7 @@ export default function Index() {
             <Link to="/thoughts/living-style-guide-driven-development">
               <Card>
                 <Card.Image alt="Chris LoPresto speaking at EmberConf 2016" src={emberConf2016Still} />
-                <div className={css({ p: 4, fontSize: 1 })}>
+                <Card.Body>
                   <Heading variant="heading">Living Style Guide Driven Development</Heading>
                   <Heading variant="subheading" css={{ mb: '1' }}>
                     EmberConf 2016
@@ -59,7 +59,7 @@ export default function Index() {
                     Creating a living design system is essential to developing a cohesive experience for users over the
                     lifetime of a product. Ember tooling and conventions make this easier than you might expect.
                   </p>
-                </div>
+                </Card.Body>
               </Card>
             </Link>
           </div>

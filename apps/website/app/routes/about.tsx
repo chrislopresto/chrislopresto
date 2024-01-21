@@ -62,7 +62,7 @@ export default function Index() {
           <sup>4</sup>. He is always game to debate which is better, cake or pie
           <sup>5</sup>.
         </p>
-        <Signature />
+        <Signature variant="hyper" />
       </section>
 
       <section>

@@ -8,7 +8,7 @@ type BaseProps = {
 };
 
 const Body: FC<BaseProps> = ({ css: cssProp = {}, children }) => {
-  const className = css({ p: '3' }, cssProp);
+  const className = css({ p: '4' }, cssProp);
   return <div className={className}>{children}</div>;
 };
 
@@ -33,8 +33,9 @@ const Image: FC<ImageProps> = ({ css: cssProp = {}, alt = '', ...props }) => {
 const CardComponent: FC<BaseProps> = ({ css: cssProp = {}, children }) => {
   const className = css(
     {
-      boxShadow: '3px 3px 0px token(colors.border)',
-      borderRadius: 'sm',
+      boxShadow: '4px 4px 0 token(colors.teal.200)',
+      border: 'solid 2px token(colors.indigo.400)',
+      borderRadius: 'md',
       bg: 'backgroundSecondary',
     },
     cssProp,
