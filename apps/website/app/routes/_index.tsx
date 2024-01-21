@@ -14,6 +14,7 @@ import {
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { useColorScheme } from '../styles/color-scheme';
 import { Nav } from '../components/nav/nav';
+import { Link } from '../components/link/link';
 
 export const meta: MetaFunction = () => {
   return [
@@ -38,41 +39,10 @@ export default function Index() {
       <section className={css({ vr: true })}>
         <Heading variant="heading">Hello</Heading>
         <p className={css({ vr: true })}>
-          Thanks for stopping by. Back in the day, websites used to greet readers conversationally. In that spirit,
-          hello.
-        </p>
-        <p className={css({ vr: true })}>
-          <RemixLink
-            to="/about"
-            className={css({
-              color: 'teal.600',
-              mb: '3',
-              display: 'block',
-              textDecoration: 'underline',
-              textUnderlineOffset: '2px',
-              textDecorationStyle: 'dotted',
-              _hover: {
-                color: 'teal.800',
-                textShadow: '0px 2px 4px magenta',
-                textDecorationColor: 'magenta',
-                textDecorationThickness: '1px',
-              },
-              _active: {
-                color: 'teal.800',
-                textShadow: '0px 2px 4px magenta',
-                textDecorationColor: 'magenta',
-                textDecorationThickness: '1px',
-              },
-              _focus: {
-                color: 'teal.800',
-                textShadow: '0px 2px 4px magenta',
-                textDecorationColor: 'magenta',
-                textDecorationThickness: '1px',
-              },
-            })}
-          >
-            Allow me to introduce myself.
-          </RemixLink>
+          Thanks for stopping by.{' '}
+          <Link asChild>
+            <RemixLink to="/about">Allow me to introduce myself.</RemixLink>
+          </Link>
         </p>
       </section>
       <section className={css({ vr: true })}>
