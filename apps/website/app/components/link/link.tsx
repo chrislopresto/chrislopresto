@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { css } from '../../../styled-system/css';
 import { SystemStyleObject } from '../../../styled-system/types';
 import { Slot } from '@radix-ui/react-slot';
@@ -29,7 +29,7 @@ export const linkCss = css.raw({
   _focus: activeCss,
 });
 
-export const Link: React.FC<LinkProps> = ({ css: cssProp = {}, asChild = false, children, ...props }) => {
+export function Link({ css: cssProp = {}, asChild = false, children, ...props }: LinkProps) {
   const className = css(linkCss, cssProp);
   const LinkElement = asChild ? Slot : 'a';
   return (
@@ -37,4 +37,4 @@ export const Link: React.FC<LinkProps> = ({ css: cssProp = {}, asChild = false, 
       {children}
     </LinkElement>
   );
-};
+}

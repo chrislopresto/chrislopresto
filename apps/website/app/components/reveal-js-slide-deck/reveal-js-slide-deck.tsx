@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '../../../styled-system/css';
 
 const DEFAULT_HEIGHT = '100vh';
@@ -7,7 +6,7 @@ const HOSTING_PROVIDER_BASE_URL = 'https://s3-us-west-2.amazonaws.com';
 
 type Slug = 'living-style-guide-driven-development' | 'betterment-rebranding-bonanza';
 
-type ComponentProps = {
+type RevealJsSlideDeckProps = {
   title: string;
   height?: string;
   width?: string;
@@ -15,13 +14,13 @@ type ComponentProps = {
   slug: Slug;
 };
 
-export const RevealJsSlideDeck: React.FC<ComponentProps> = ({
+export function RevealJsSlideDeck({
   width = DEFAULT_WIDTH,
   height = DEFAULT_HEIGHT,
   showControls = true,
   slug,
   title,
-}) => {
+}: RevealJsSlideDeckProps) {
   let h = '0';
   if (typeof window !== 'undefined') {
     const urlParams = new URLSearchParams(window.location.search);
@@ -43,4 +42,4 @@ export const RevealJsSlideDeck: React.FC<ComponentProps> = ({
       height={height}
     />
   );
-};
+}

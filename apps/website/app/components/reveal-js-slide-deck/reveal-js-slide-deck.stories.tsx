@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { StoryObj } from '@storybook/react';
 import type { Meta } from '@storybook/react';
 

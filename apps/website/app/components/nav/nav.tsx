@@ -7,6 +7,7 @@ import { SystemStyleObject } from '../../../styled-system/types';
 type NavProps = {
   css?: SystemStyleObject;
 };
+
 export function Nav({ css: cssProp = {} }: NavProps) {
   const className = css(hstack.raw({ gap: 3 }), cssProp);
   return (
