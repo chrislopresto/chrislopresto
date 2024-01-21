@@ -5,6 +5,7 @@ import { Link } from '@remix-run/react';
 
 import chrisLouiseSpin from '../images/chris-louise-spin.jpg';
 import { css } from '../../styled-system/css';
+import { Nav } from '../components/nav/nav';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Chris LoPresto | About' }, { name: 'description', content: 'Chris LoPresto bio' }];
@@ -16,6 +17,7 @@ export default function Index() {
       <Heading as="h1" css={{ mb: '1' }}>
         About Chris
       </Heading>
+      <Nav css={{ mb: 4 }} />
       <img
         src={chrisLouiseSpin}
         alt="Chris and Louise playing a game of ping pong"

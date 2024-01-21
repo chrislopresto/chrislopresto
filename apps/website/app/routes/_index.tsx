@@ -1,5 +1,5 @@
 import type { MetaFunction } from '@remix-run/cloudflare';
-import { Link } from '@remix-run/react';
+import { Link as RemixLink } from '@remix-run/react';
 import { Signature } from '../components/signature/signature';
 import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
@@ -13,6 +13,7 @@ import {
 } from '@remixicon/react';
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { useColorScheme } from '../styles/color-scheme';
+import { Nav } from '../components/nav/nav';
 
 export const meta: MetaFunction = () => {
   return [
@@ -29,10 +30,10 @@ export default function Index() {
   return (
     <div>
       <section className={css({ vr: true })}>
-        <Heading as="h1" onClick={() => toggle()} css={{ cursor: 'pointer' }}>
+        <Heading as="h1" onClick={() => toggle()} css={{ cursor: 'pointer', ml: '-1' }}>
           Chris L<span className={css({ fontSize: { base: '5xl', md: '7xl' } })}>o</span>Presto
         </Heading>
-        <p className={css({ fontSize: 'sm' })}>Engineering leader. Musician.</p>
+        <Nav />
       </section>
       <section className={css({ vr: true })}>
         <Heading variant="heading">Hello</Heading>
@@ -41,7 +42,7 @@ export default function Index() {
           hello.
         </p>
         <p className={css({ vr: true })}>
-          <Link
+          <RemixLink
             to="/about"
             className={css({
               color: 'teal.600',
@@ -71,7 +72,7 @@ export default function Index() {
             })}
           >
             Allow me to introduce myself.
-          </Link>
+          </RemixLink>
         </p>
       </section>
       <section className={css({ vr: true })}>
