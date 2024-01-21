@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { css, cva, type RecipeVariantProps } from '../../../styled-system/css';
 import { SystemStyleObject } from '../../../styled-system/types';
 
@@ -21,17 +21,17 @@ export const headingCss = cva({
   },
 });
 
-export const Heading: React.FC<HeadingProps> = ({
+export function Heading({
   variant = 'title',
   css: cssProp = {},
   as: HeadingElement = 'h2',
   children,
   ...props
-}) => {
+}: HeadingProps) {
   const className = css(headingCss.raw({ variant }), cssProp);
   return (
     <HeadingElement className={className} {...props}>
       {children}
     </HeadingElement>
   );
-};
+}

@@ -6,7 +6,7 @@ type SignatureProps = {
   description?: string;
 };
 
-export const Signature = ({ css: cssProp = {}, description }: SignatureProps) => {
+export function Signature({ css: cssProp = {}, description }: SignatureProps) {
   return (
     <svg role="img" viewBox="0, 0, 590, 204" width={118} height={40} className={css(cssProp)}>
       <title>Chris LoPresto</title>
@@ -17,4 +17,4 @@ export const Signature = ({ css: cssProp = {}, description }: SignatureProps) =>
       />
     </svg>
   );
-};
+}
