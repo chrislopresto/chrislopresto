@@ -5,7 +5,6 @@ import { Link } from '@remix-run/react';
 
 import chrisLouiseSpin from '../images/chris-louise-spin.jpg';
 import { css } from '../../styled-system/css';
-import { token } from '../../styled-system/tokens';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Chris LoPresto | About' }, { name: 'description', content: 'Chris LoPresto bio' }];
