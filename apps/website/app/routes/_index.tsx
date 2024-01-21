@@ -94,7 +94,7 @@ export default function Index() {
         </AccessibleIcon>
       </section>
       <section>
-        <Signature css={{ color: 'teal.400' }} />
+        <Signature variant="hyper" />
       </section>
     </div>
   );
