@@ -3,4 +3,3 @@ node_modules/
 
 # junk/logs
 .DS_Store
-lerna-debug.log

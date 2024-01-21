@@ -1,4 +1,3 @@
-lerna.json
 package.json
 
 apps/website/.wrangler
