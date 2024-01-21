@@ -9,7 +9,7 @@ type ComponentProps = {
   asChild?: boolean;
 };
 
-type LinkProps = ComponentProps & React.LinkHTMLAttributes<HTMLAnchorElement>;
+type LinkProps = ComponentProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const activeCss = css.raw({
   textShadow: '2px 2px 10px token(colors.accent)',

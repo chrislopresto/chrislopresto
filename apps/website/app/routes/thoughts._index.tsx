@@ -29,7 +29,7 @@ export default function Index() {
         </div>
         <div className={grid({ columns: 2, gap: { base: '5', sm: '4' } })}>
           <div className={gridItem({ colSpan: { base: 3, lg: 1 } })}>
-            <Link to="/thoughts/conference-talks/hot-swapping-our-rails-front-end-in-secret">
+            <Link to="/thoughts/hot-swapping-our-rails-front-end-in-secret">
               <Card>
                 <Card.Image alt="Chris LoPresto speaking at RailsConf 2018" src={railsConf2018Still} />
                 <div className={css({ p: 4, fontSize: 1 })}>
@@ -47,7 +47,7 @@ export default function Index() {
             </Link>
           </div>
           <div className={gridItem({ colSpan: { base: 3, lg: 1 } })}>
-            <Link to="/thoughts/conference-talks/living-style-guide-driven-development">
+            <Link to="/thoughts/living-style-guide-driven-development">
               <Card>
                 <Card.Image alt="Chris LoPresto speaking at EmberConf 2016" src={emberConf2016Still} />
                 <div className={css({ p: 4, fontSize: 1 })}>
