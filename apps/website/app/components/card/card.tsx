@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react';
-import { css } from '../../../styled-system/css';
-import { SystemStyleObject } from '../../../styled-system/types';
+import { css, cva } from '../../../styled-system/css';
+import { RecipeVariantProps, SystemStyleObject } from '../../../styled-system/types';
 
 type BaseProps = {
   css?: SystemStyleObject;
@@ -12,13 +12,45 @@ const Body: FC<BaseProps> = ({ css: cssProp = {}, children }) => {
   return <div className={className}>{children}</div>;
 };
 
-type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
-  css?: SystemStyleObject;
-};
+type CardImageVariants = RecipeVariantProps<typeof cardImageCss>;
+type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> &
+  CardImageVariants & {
+    css?: SystemStyleObject;
+  };
+
+export const cardImageCss = cva({
+  variants: {
+    variant: {
+      default: {},
+      stylized: {
+        filter: 'grayscale(40%) contrast(130%) brightness(110%)',
+        // mixBlendMode: 'none',
+      },
+    },
+  },
+});
+
+const cardImageContainerCss = css({
+  display: 'inline-block',
+  position: 'relative',
+  lineHeight: 0,
+  background: 'white',
+
+  _after: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%',
+    content: '""',
+    background: 'rgba(0, 255, 255, 0.2)',
+  },
+});
 
 // eslint-disable-next-line react/prop-types
-const Image: FC<ImageProps> = ({ css: cssProp = {}, alt = '', ...props }) => {
+const Image: FC<ImageProps> = ({ css: cssProp = {}, variant = 'default', alt = '', ...props }) => {
   const className = css(
+    cardImageCss.raw({ variant }),
     {
       borderTopLeftRadius: 'inherit',
       borderTopRightRadius: 'inherit',
@@ -27,7 +59,11 @@ const Image: FC<ImageProps> = ({ css: cssProp = {}, alt = '', ...props }) => {
     },
     cssProp,
   );
-  return <img alt={alt} className={className} {...props} />;
+  return (
+    <div className={variant === 'stylized' ? cardImageContainerCss : ''}>
+      <img alt={alt} className={className} {...props} />
+    </div>
+  );
 };
 
 const CardComponent: FC<BaseProps> = ({ css: cssProp = {}, children }) => {

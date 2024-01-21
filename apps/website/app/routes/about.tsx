@@ -14,9 +14,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div>
-      <Heading as="h1" css={{ mb: '1' }}>
-        About Chris
-      </Heading>
+      <Heading as="h1">About Chris</Heading>
       <Nav css={{ mb: 4 }} />
       <img
         src={chrisLouiseSpin}
@@ -62,7 +60,7 @@ export default function Index() {
           <sup>4</sup>. He is always game to debate which is better, cake or pie
           <sup>5</sup>.
         </p>
-        <Signature variant="hyper" />
+        <Signature />
       </section>
 
       <section>
