@@ -1,4 +1,7 @@
 lerna.json
 package.json
 
+apps/website/.wrangler
 apps/website/public/build
+apps/website/public/storybook
+apps/website/styled-system
