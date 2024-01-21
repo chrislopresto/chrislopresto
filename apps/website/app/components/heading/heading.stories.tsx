@@ -41,7 +41,7 @@ export default meta;
 
 type Story = StoryObj<StoryComponent>;
 
-export const interactive: Story = {
+export const Interactive: Story = {
   render: ({ demoText, color, ...args }) => (
     <Heading css={{ color }} {...args}>
       {demoText}
@@ -49,7 +49,7 @@ export const interactive: Story = {
   ),
 };
 
-export const showcase: Story = {
+export const Showcase: Story = {
   render: ({ demoText }) => (
     <>
       <span className={css({ display: 'none', color: 'cyan' })}>cyan</span>
