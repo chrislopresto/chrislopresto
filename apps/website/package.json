@@ -55,7 +55,7 @@
     "storybook": "^7.6.10",
     "storybook-addon-react-router-v6": "^2.0.10",
     "typescript": "^5.3.3",
-    "vite": "^5.0.12",
+    "vite": "^5.0.13",
     "vitest": "^1.2.1",
     "wrangler": "3.23.0"
   },
