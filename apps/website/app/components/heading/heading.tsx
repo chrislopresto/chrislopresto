@@ -13,10 +13,26 @@ type HeadingProps = ComponentProps & HeadingVariants & React.HTMLAttributes<HTML
 export const headingCss = cva({
   variants: {
     variant: {
-      title: { textStyle: 'title', textShadow: '3px 3px 0px token(colors.teal.200)' },
-      subtitle: { textStyle: 'subtitle', textShadow: '3px 3px 0px token(colors.teal.200)' },
-      heading: { textStyle: 'heading' },
-      subheading: { textStyle: 'subheading' },
+      title: {
+        textStyle: 'title',
+        textShadow: { _light: '3px 3px 0px token(colors.teal.200)', _dark: '3px 3px 0px token(colors.teal.600)' },
+      },
+      subtitle: {
+        textStyle: 'subtitle',
+        textShadow: { _light: '3px 3px 0px token(colors.teal.200)', _dark: '3px 3px 0px token(colors.teal.600)' },
+      },
+      heading: {
+        textStyle: 'heading',
+        textDecoration: 'underline',
+        // textDecorationStyle: 'wavy',
+        textDecorationColor: 'teal.200',
+      },
+      subheading: {
+        textStyle: 'subheading',
+        textDecoration: 'underline',
+        textDecorationStyle: 'double',
+        textDecorationColor: 'teal.200',
+      },
     },
   },
 });

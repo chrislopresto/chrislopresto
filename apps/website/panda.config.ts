@@ -24,7 +24,7 @@ export const textStyles = defineTextStyles({
     value: {
       fontFamily: 'Helvetica, sans-serif',
       fontWeight: 'bold',
-      fontSize: 'xl',
+      fontSize: 'lg',
       lineHeight: 'snug',
     },
   },
@@ -33,11 +33,8 @@ export const textStyles = defineTextStyles({
     value: {
       fontFamily: 'Helvetica, sans-serif',
       fontWeight: 'bold',
-      fontSize: 'sm',
+      fontSize: 'xs',
       lineHeight: 1.3,
-      textDecoration: 'underline',
-      textDecorationStyle: 'double',
-      textDecorationColor: 'teal.200',
     },
   },
   body: {
@@ -78,7 +75,7 @@ export default defineConfig({
       },
       semanticTokens: {
         colors: {
-          default: { value: { base: '{colors.gray.800}', _light: '{colors.gray.800}', _dark: '{colors.gray.200}' } },
+          default: { value: { base: '{colors.gray.800}', _light: '{colors.gray.800}', _dark: '{colors.gray.100}' } },
           background: { value: { base: '{colors.gray.100}', _light: '{colors.gray.100}', _dark: '{colors.gray.800}' } },
           backgroundSecondary: {
             value: { base: '{colors.gray.200}', _light: '{colors.gray.200}', _dark: '{colors.gray.700}' },
