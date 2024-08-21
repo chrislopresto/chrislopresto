@@ -16,9 +16,6 @@ export function Nav({ css: cssProp = {} }: NavProps) {
         <NavLink to="/">Home</NavLink>
       </Link>
       <Link asChild>
-        <NavLink to="/about">About</NavLink>
-      </Link>
-      <Link asChild>
         <NavLink to="/thoughts">Thoughts</NavLink>
       </Link>
     </div>

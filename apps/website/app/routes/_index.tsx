@@ -1,20 +1,8 @@
 import type { MetaFunction } from '@remix-run/cloudflare';
-import { Link as RemixLink } from '@remix-run/react';
-import { Signature } from '../components/signature/signature';
+import { Main } from '../layouts/main';
 import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
-import {
-  RiGithubFill,
-  RiLinkedinBoxFill,
-  RiTwitterXFill,
-  RiSunLine,
-  RiMoonLine,
-  RiRefreshLine,
-} from '@remixicon/react';
-import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
-import { useColorScheme } from '../styles/color-scheme';
-import { Nav } from '../components/nav/nav';
-import { Link } from '../components/link/link';
+import chrisLouiseSpin from '../images/chris-louise-spin.jpg';
 
 export const meta: MetaFunction = () => {
   return [
@@ -23,79 +11,74 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-const ICON_SIZE = 16;
-
 export default function Index() {
-  const { toggle, setLight, setDark, matchSystem } = useColorScheme();
-
   return (
-    <div>
-      <section className={css({ vr: true })}>
-        <Heading as="h1" onClick={() => toggle()} css={{ cursor: 'pointer', ml: '-1' }}>
-          Chris L<span className={css({ fontSize: { base: '5xl', md: '7xl' } })}>o</span>Presto
-        </Heading>
-        <Nav />
-      </section>
-      <section className={css({ vr: true })}>
-        <Heading variant="heading">Hello</Heading>
-        <p className={css({ vr: true })}>
-          Thanks for stopping by.{' '}
-          <Link asChild>
-            <RemixLink to="/about">Allow me to introduce myself.</RemixLink>
-          </Link>
-        </p>
-      </section>
-      <section className={css({ vr: true })}>
-        <Heading variant="heading">Say hello</Heading>
-        <a href="https://twitter.com/chrislopresto" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
-          <AccessibleIcon label="Twitter X">
-            <RiTwitterXFill size={ICON_SIZE} className={css({ mr: '1' })} />
-          </AccessibleIcon>
-          @chrislopresto
-        </a>
-        <a href="https://github.com/chrislopresto/" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
-          <AccessibleIcon label="GitHub">
-            <RiGithubFill size={ICON_SIZE} className={css({ mr: '1' })} />
-          </AccessibleIcon>
-          @chrislopresto
-        </a>
-        <a
-          href="https://www.linkedin.com/in/chrislopresto/"
-          className={css({ display: 'flex', mb: '1', textStyle: 'body' })}
-        >
-          <AccessibleIcon label="LinkedIn">
-            <RiLinkedinBoxFill size={ICON_SIZE} className={css({ mr: '1' })} />
-          </AccessibleIcon>
-          chrislopresto
-        </a>
-      </section>
-      <section className={css({ vr: true })}>
-        <Heading variant="heading">Appearance</Heading>
-        <AccessibleIcon label="Light theme">
-          <RiSunLine
-            size={ICON_SIZE}
-            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
-            onClick={() => setLight()}
-          />
-        </AccessibleIcon>
-        <AccessibleIcon label="Dark theme">
-          <RiMoonLine
-            size={ICON_SIZE}
-            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
-            onClick={() => setDark()}
-          />
-        </AccessibleIcon>
-        <AccessibleIcon label="Match system">
-          <RiRefreshLine
-            size={ICON_SIZE}
-            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
-            onClick={() => matchSystem()}
-          />
-        </AccessibleIcon>
-      </section>
-      <section>
-        <Signature variant="hyper" />
-      </section>
-    </div>
+    <Main>
+      <div>
+        <img
+          src={chrisLouiseSpin}
+          alt="Chris and Louise playing a game of ping pong"
+          className={css({
+            borderRadius: 'md',
+            boxShadow: '4px 4px 0 token(colors.teal.200)',
+            border: 'solid 2px token(colors.indigo.400)',
+            mb: '3',
+          })}
+        />
+
+        <section>
+          <Heading as="h2" variant="subtitle" css={{ vr: true }}>
+            About Chris
+          </Heading>
+          <p className={css({ vr: true })}>
+            I am a software engineering leader and musician. I live within striking distance of New York City with my
+            wife Louise, daughter Lark, and Boston Terrier Roland.
+          </p>
+          <p className={css({ vr: true })}>
+            I grew up as an oldest child in Delaware, the oldest state. I have degrees in Jazz Performance (piano) and
+            Computer Science.
+          </p>
+          <Heading variant="heading">A music bio...</Heading>
+          <p className={css({ vr: true })}>
+            Chris has performed at iconic venues<sup>1</sup> and dive bars
+            <sup>2</sup> around the world
+            <sup>3</sup>, most notably with Roc Nation / Epic Records recording artist Hugo. Chris has performed on Late
+            Night with David Letterman, Jimmy Kimmel Live!, X Factor, and morning shows that film far too early.
+          </p>
+          <Heading variant="heading">A software bio...</Heading>
+          <p className={css({ vr: true })}>
+            Chris is an an engineering leader with experience building teams and inspiring change. He has a track record
+            of accelerating product development while leveling up engineering and design orgs. Over the course of his
+            career, Chris has played with Patriot Missile System schematics, been CTO of a venture-funded startup, given
+            conference talks, and accrued several stories.
+          </p>
+          <Heading variant="heading">A miscellaneous blurb...</Heading>
+          <p className={css({ vr: true })}>
+            Chris is an Eagle Scout who has visited 46 of the 50 states and ridden a private elevator with a pope
+            <sup>4</sup>. He is always game to debate which is better, cake or pie
+            <sup>5</sup>.
+          </p>
+        </section>
+
+        <section>
+          <br />
+          <br />
+          <hr />
+          <p>
+            <br />
+            <sup>1</sup>&nbsp;Carnegie Hall
+            <br />
+            <sup>2</sup>&nbsp;The Ground Floor
+            <br />
+            <sup>3</sup>&nbsp;Olympic arena in Beijing
+            <br />
+            <sup>4</sup>&nbsp;Neither of us was pope at the time
+            <br />
+            <sup>5</sup>&nbsp;Cake
+            <br />
+          </p>
+        </section>
+      </div>
+    </Main>
   );
 }
