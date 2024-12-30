@@ -109,18 +109,18 @@ export default defineConfig({
         className: 'verticalRhythm',
         shorthand: 'vr',
         values: { type: 'boolean' },
-        transform(value) {
+        transform(value, { token }) {
           if (!value) return {};
           return {
-            marginBottom: 'token(spacing.2)',
+            marginBottom: token('spacing.2'),
             '@breakpoint sm': {
-              marginBottom: 'token(spacing.3)',
+              marginBottom: token('spacing.3'),
             },
             '@breakpoint md': {
-              marginBottom: 'token(spacing.4)',
+              marginBottom: token('spacing.4'),
             },
             '@breakpoint lg': {
-              marginBottom: 'token(spacing.5)',
+              marginBottom: token('spacing.5'),
             },
           };
         },
