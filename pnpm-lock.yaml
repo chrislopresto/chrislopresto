@@ -39,8 +39,8 @@ importers:
         specifier: ^2.15.2
         version: 2.15.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.3)
       '@remixicon/react':
-        specifier: ^4.1.1
-        version: 4.1.1(react@18.2.0)
+        specifier: ^4.6.0
+        version: 4.6.0(react@18.2.0)
       isbot:
         specifier: ^3.8.0
         version: 3.8.0
@@ -2087,8 +2087,8 @@ packages:
   '@remix-run/web-stream@1.1.0':
     resolution: {integrity: sha512-KRJtwrjRV5Bb+pM7zxcTJkhIqWWSy+MYsIxHK+0m5atcznsf15YwUBWHWulZerV2+vvHH1Lp1DD7pw6qKW8SgA==}
 
-  '@remixicon/react@4.1.1':
-    resolution: {integrity: sha512-a2WSRfuv94OwSX2AK2IRhDEYAYxL0AOeF5+3boTILpC41e8Mp8ZJ7b2980ekOnJsnkcBofcHi4/GDR9cKTl/Bg==}
+  '@remixicon/react@4.6.0':
+    resolution: {integrity: sha512-bY56maEgT5IYUSRotqy9h03IAKJC85vlKtWFg2FKzfs8JPrkdBAYSa9dxoUSKFwGzup8Ux6vjShs9Aec3jvr2w==}
     peerDependencies:
       react: '>=18.2.0'
 
@@ -8989,7 +8989,7 @@ snapshots:
     dependencies:
       web-streams-polyfill: 3.3.2
 
-  '@remixicon/react@4.1.1(react@18.2.0)':
+  '@remixicon/react@4.6.0(react@18.2.0)':
     dependencies:
       react: 18.2.0
 
