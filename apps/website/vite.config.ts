@@ -1,4 +1,4 @@
-import { vitePluginViteNodeMiniflare } from '@hiogawa/vite-node-miniflare';
+import { cloudflareDevProxy } from '@react-router/dev/vite/cloudflare';
 import { reactRouter } from '@react-router/dev/vite';
 import autoprefixer from 'autoprefixer';
 import { defineConfig } from 'vite';
@@ -32,11 +32,9 @@ export default defineConfig(({ isSsrBuild }) => ({
   },
   plugins: [
     { enforce: 'pre', ...mdx() },
-    vitePluginViteNodeMiniflare({
-      entry: './workers/app.ts',
-      miniflareOptions: (options) => {
-        options.compatibilityDate = '2024-11-18';
-        options.compatibilityFlags = ['nodejs_compat'];
+    cloudflareDevProxy({
+      getLoadContext({ context }) {
+        return { cloudflare: context.cloudflare };
       },
     }),
     !isStorybook && reactRouter(),

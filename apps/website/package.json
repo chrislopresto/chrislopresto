@@ -9,7 +9,6 @@
     "dev": "react-router dev",
     "test": "vitest",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "deploy": "wrangler pages deploy ./build/client",
     "start": "wrangler dev",
     "nuke": "rm -rf .wrangler .cache node_modules/.cache",
     "typecheck": "react-router typegen && tsc",
@@ -30,7 +29,6 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241112.0",
-    "@hiogawa/vite-node-miniflare": "0.1.1",
     "@mdx-js/rollup": "^3.1.0",
     "@pandacss/dev": "^0.50.0",
     "@storybook/addon-essentials": "^8.4.7",

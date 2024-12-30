@@ -1,3 +1,4 @@
+import type { Route } from './+types/home';
 import type { MetaFunction } from 'react-router';
 import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
@@ -10,7 +11,11 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
+export function loader({ context }: Route.LoaderArgs) {
+  return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
+}
+
+export default function Index({ loaderData }: Route.ComponentProps) {
   return (
     <div>
       <img
@@ -31,7 +36,7 @@ export default function Index() {
         <p className={css({ vr: true })}>
           I am a software engineering leader and musician. I live within striking distance of New York City with my wife
           Louise, daughter Lark, and Boston Terrier Roland. I grew up as an oldest child in Delaware, the oldest state.
-          I have degrees in Jazz Performance (piano) and Computer Science.
+          I have degrees in Jazz Performance (piano) and Computer Science. {loaderData.message}
         </p>
         <Heading variant="heading">A music bio...</Heading>
         <p className={css({ vr: true })}>
