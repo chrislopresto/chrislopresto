@@ -3,7 +3,7 @@ import type { Meta } from '@storybook/react';
 
 import { Nav } from './nav';
 
-import { withRouter, reactRouterParameters } from 'storybook-addon-react-router-v6';
+import { withRouter, reactRouterParameters } from 'storybook-addon-remix-react-router';
 
 type StoryComponent = React.ComponentProps<typeof Nav>;
 

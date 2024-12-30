@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react';
 import { Link } from './link';
 import { NavLink } from '@remix-run/react';
 
-import { withRouter, reactRouterParameters } from 'storybook-addon-react-router-v6';
+import { withRouter, reactRouterParameters } from 'storybook-addon-remix-react-router';
 
 type StoryComponent = React.ComponentProps<typeof Link> & { demoText?: string };
 
