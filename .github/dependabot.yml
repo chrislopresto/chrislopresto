@@ -1,0 +1,60 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    commit-message:
+      prefix: '⬆️ '
+    groups:
+      monorepo-version-updates:
+        patterns:
+          - '*'
+  - package-ecosystem: 'npm'
+    open-pull-requests-limit: 15
+    directories:
+      - '/apps/*'
+    schedule:
+      interval: 'daily'
+    commit-message:
+      prefix: '⬆️ '
+    groups:
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
+      remix:
+        patterns:
+          - '@remix-run/*'
+      radix:
+        patterns:
+          - '@radix-ui/*'
+      storybook:
+        patterns:
+          - 'storybook'
+          - '@storybook/*'
+          - 'storybook-addon-react-router-v6'
+      panda:
+        patterns:
+          - '@pandacss/*'
+      vite:
+        patterns:
+          - 'vite'
+          - 'vitest'
+      testing:
+        patterns:
+          - '@testing-library/*'
+          - 'vitest'
+          - 'jsdom'
+      typescript-eslint:
+        patterns:
+          - 'typescript'
+          - 'eslint'
+          - 'eslint-*'
+          - '@typescript-eslint/*'
+      cloudflare:
+        patterns:
+          - '@cloudflare/*'
+          - 'wrangler'
