@@ -9,6 +9,7 @@
     "dev": "react-router dev",
     "test": "vitest",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "deploy": "wrangler pages deploy ./build/client",
     "start": "wrangler dev",
     "nuke": "rm -rf .wrangler .cache node_modules/.cache",
     "typecheck": "react-router typegen && tsc",
