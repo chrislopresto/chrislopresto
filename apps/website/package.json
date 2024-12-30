@@ -16,7 +16,7 @@
     "typecheck": "react-router typegen && tsc --build --noEmit",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build -o ./public/storybook ; touch ./public/storybook/.gitkeep",
-    "cloudflare:build": "pnpm run build && pnpm run storybook:build"
+    "cloudflare:build": "pnpm run build && pnpm run storybook:build && cp -r ./public/storybook ./build/client/"
   },
   "dependencies": {
     "@radix-ui/react-accessible-icon": "^1.1.1",
