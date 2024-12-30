@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240117.0",
-    "@pandacss/dev": "^0.27.3",
+    "@pandacss/dev": "^0.50.0",
     "@remix-run/dev": "^2.15.2",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
