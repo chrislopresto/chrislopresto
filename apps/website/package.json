@@ -16,8 +16,8 @@
     "storybook:build": "storybook build -o ./public/storybook ; touch ./public/storybook/.gitkeep"
   },
   "dependencies": {
-    "@radix-ui/react-accessible-icon": "^1.0.3",
-    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-accessible-icon": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.1",
     "@remix-run/cloudflare": "^2.15.2",
     "@remix-run/cloudflare-pages": "^2.15.2",
     "@remix-run/css-bundle": "^2.15.2",
