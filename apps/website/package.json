@@ -13,7 +13,8 @@
     "nuke": "rm -rf .wrangler .cache node_modules/.cache",
     "typecheck": "react-router typegen && tsc",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build -o ./public/storybook ; touch ./public/storybook/.gitkeep"
+    "storybook:build": "storybook build -o ./public/storybook ; touch ./public/storybook/.gitkeep",
+    "cloudflare:build": "pnpm run build && pnpm run storybook:build"
   },
   "dependencies": {
     "@radix-ui/react-accessible-icon": "^1.1.1",
