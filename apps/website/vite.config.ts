@@ -7,14 +7,8 @@ import pandacss from '@pandacss/dev/postcss';
 import mdx from '@mdx-js/rollup';
 const isStorybook = process.argv[1]?.includes('storybook');
 
-export default defineConfig(({ isSsrBuild }) => ({
-  build: {
-    rollupOptions: isSsrBuild
-      ? {
-          input: './workers/app.ts',
-        }
-      : undefined,
-  },
+export default defineConfig({
+  build: { minify: true },
   css: {
     postcss: {
       plugins: [pandacss, autoprefixer],
@@ -40,4 +34,4 @@ export default defineConfig(({ isSsrBuild }) => ({
     !isStorybook && reactRouter(),
     tsconfigPaths(),
   ],
-}));
+});

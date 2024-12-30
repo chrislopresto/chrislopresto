@@ -1,11 +1,13 @@
 workers_dev = true
 name = "my-worker"
-compatibility_date = "2024-11-18"
-main = "./build/server/index.js"
+main = "./workers/app.ts"
 
-[assets]
-# https://developers.cloudflare.com/workers/static-assets/binding/
-directory = "./build/client"
+# Compatibility
+compatibility_date = "2024-11-18"
+compatibility_flags = ["nodejs_compat"]
+
+# assets
+assets = { directory = "./build/client/" }
 
 [vars]
 VALUE_FROM_CLOUDFLARE = "Hello from Cloudflare"
