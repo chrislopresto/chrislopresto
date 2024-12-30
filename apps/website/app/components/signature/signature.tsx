@@ -1,5 +1,5 @@
-import { css, cva, RecipeVariantProps } from '../../../styled-system/css';
-import { SystemStyleObject } from '../../../styled-system/types';
+import { css, cva, type RecipeVariantProps } from '../../../styled-system/css';
+import type { SystemStyleObject } from '../../../styled-system/types';
 
 type ComponentProps = {
   css?: SystemStyleObject;

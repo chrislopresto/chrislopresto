@@ -5,3 +5,5 @@ apps/website/functions
 apps/website/public/build
 apps/website/public/storybook
 apps/website/styled-system
+
+worker-configuration.d.ts

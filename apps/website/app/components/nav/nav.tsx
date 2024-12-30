@@ -1,8 +1,8 @@
-import { NavLink } from '@remix-run/react';
+import { NavLink } from 'react-router';
 import { Link } from '../link/link';
 import { css } from '../../../styled-system/css';
 import { hstack } from '../../../styled-system/patterns';
-import { SystemStyleObject } from '../../../styled-system/types';
+import type { SystemStyleObject } from '../../../styled-system/types';
 
 type NavProps = {
   css?: SystemStyleObject;

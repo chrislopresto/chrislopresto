@@ -1,4 +1,4 @@
-import type { MetaFunction } from '@remix-run/cloudflare';
+import type { MetaFunction } from 'react-router';
 import { Signature } from '../components/signature/signature';
 import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
@@ -13,8 +13,7 @@ import {
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { useColorScheme } from '../styles/color-scheme';
 import { Nav } from '../components/nav/nav';
-import React from 'react';
-import { NavLink } from '@remix-run/react';
+import { NavLink, Outlet } from 'react-router';
 
 export const meta: MetaFunction = () => {
   return [
@@ -24,10 +23,6 @@ export const meta: MetaFunction = () => {
 };
 
 const ICON_SIZE = 16;
-
-type MainProps = {
-  children?: React.ReactNode;
-};
 
 function Header() {
   return (
@@ -103,12 +98,16 @@ function Footer() {
   );
 }
 
-export function Main({ children }: MainProps) {
+export function Main() {
   return (
     <div>
       <Header />
-      <section className={css({ vr: true })}>{children}</section>
+      <section className={css({ vr: true })}>
+        <Outlet />
+      </section>
       <Footer />
     </div>
   );
 }
+
+export default Main;

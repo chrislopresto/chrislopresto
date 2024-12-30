@@ -1,12 +1,17 @@
-import type { LinksFunction } from '@remix-run/cloudflare';
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import styles from './index.css';
 import { useColorScheme } from './styles/color-scheme';
 import { css } from '../styled-system/css';
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
-export default function App() {
+import type { Route } from './+types/root';
+
+import stylesheet from './app.css?url';
+
+import { Provider } from 'jotai';
+
+export const links: Route.LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
+
+function App() {
   const { colorScheme } = useColorScheme();
   return (
     <html lang="en">
@@ -23,8 +28,15 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function WrappedApp() {
+  return (
+    <Provider>
+      <App />
+    </Provider>
   );
 }

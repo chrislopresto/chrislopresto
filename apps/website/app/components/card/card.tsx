@@ -1,6 +1,7 @@
-import React, { FC, ReactNode } from 'react';
+import React from 'react';
+import type { FC, ReactNode } from 'react';
 import { css, cva } from '../../../styled-system/css';
-import { RecipeVariantProps, SystemStyleObject } from '../../../styled-system/types';
+import type { RecipeVariantProps, SystemStyleObject } from '../../../styled-system/types';
 
 type BaseProps = {
   css?: SystemStyleObject;

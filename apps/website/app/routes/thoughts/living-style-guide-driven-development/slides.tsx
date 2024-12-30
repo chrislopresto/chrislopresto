@@ -1,4 +1,4 @@
-import { RevealJsSlideDeck } from '../components/reveal-js-slide-deck/reveal-js-slide-deck';
+import { RevealJsSlideDeck } from '../../../components/reveal-js-slide-deck/reveal-js-slide-deck';
 
 export default function Index() {
   return (

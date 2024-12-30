@@ -1,15 +1,18 @@
 node_modules
-
 /.cache
-/.wrangler
-/functions/\[\[path\]\].js
-/functions/\[\[path\]\].js.map
-/functions/metafile.*
-/functions/version.txt
 /public/build
+
+# Cloudflare
+.mf
+.wrangler
 .dev.vars
 
+# Panda
 /styled-system
 
+# Storybook
 public/storybook/**/*
 !public/storybook/.gitkeep
+
+# React Router
+.react-router
