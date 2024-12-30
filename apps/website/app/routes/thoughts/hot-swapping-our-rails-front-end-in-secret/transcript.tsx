@@ -1,8 +1,7 @@
-import type { MetaFunction } from '@remix-run/cloudflare';
+import type { MetaFunction } from 'react-router';
 
-import Transcript from '../talks/hot-swapping-our-rails-front-end-in-secret.transcript.mdx';
-import React from 'react';
-import { TranscriptStyler } from '../components/transcript-styler/transcript-styler';
+import Transcript from '../../../talks/hot-swapping-our-rails-front-end-in-secret.transcript.mdx';
+import { TranscriptStyler } from '../../../components/transcript-styler/transcript-styler';
 
 export const meta: MetaFunction = () => {
   return [

@@ -1,7 +1,6 @@
-import type { MetaFunction } from '@remix-run/cloudflare';
-import Transcript from '../talks/living-style-guide-driven-development.transcript.mdx';
-import { TranscriptStyler } from '../components/transcript-styler/transcript-styler';
-import React from 'react';
+import type { MetaFunction } from 'react-router';
+import Transcript from '../../../talks/living-style-guide-driven-development.transcript.mdx';
+import { TranscriptStyler } from '../../../components/transcript-styler/transcript-styler';
 
 export const meta: MetaFunction = () => {
   return [

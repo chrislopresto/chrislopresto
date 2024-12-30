@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { css } from '../../../styled-system/css';
-import { SystemStyleObject } from '../../../styled-system/types';
+import type { SystemStyleObject } from '../../../styled-system/types';
 import { Slot } from '@radix-ui/react-slot';
 
 type ComponentProps = {

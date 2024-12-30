@@ -1,9 +1,9 @@
-import type { MetaFunction } from '@remix-run/cloudflare';
-import { Link as RemixLink } from '@remix-run/react';
-import { Heading } from '../components/heading/heading';
-import { css } from '../../styled-system/css';
-import { Link } from '../components/link/link';
-import { externalLinkProps } from '../utilities/link';
+import type { MetaFunction } from 'react-router';
+import { Link as RemixLink } from 'react-router';
+import { Heading } from '../../../components/heading/heading';
+import { css } from '../../../../styled-system/css';
+import { Link } from '../../../components/link/link';
+import { externalLinkProps } from '../../../utilities/link';
 
 export const meta: MetaFunction = () => {
   return [

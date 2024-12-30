@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { css, cva, type RecipeVariantProps } from '../../../styled-system/css';
-import { SystemStyleObject } from '../../../styled-system/types';
+import type { SystemStyleObject } from '../../../styled-system/types';
 
 type ComponentProps = {
   css?: SystemStyleObject;

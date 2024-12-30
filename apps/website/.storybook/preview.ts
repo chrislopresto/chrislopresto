@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import './storybook-preview.css';
-import '../app/index.css';
+import '../app/app.css';
 import '../app/fonts';
 
 const preview: Preview = {

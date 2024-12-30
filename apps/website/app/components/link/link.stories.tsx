@@ -1,8 +1,7 @@
-import { StoryObj } from '@storybook/react';
-import type { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Link } from './link';
-import { NavLink } from '@remix-run/react';
+import { NavLink } from 'react-router';
 
 import { withRouter, reactRouterParameters } from 'storybook-addon-remix-react-router';
 
