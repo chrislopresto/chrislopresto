@@ -36,14 +36,14 @@ importers:
         specifier: ^7.1.1
         version: 7.1.1(react-router@7.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.2)
       '@remixicon/react':
-        specifier: ^4.1.1
-        version: 4.1.1(react@19.0.0)
+        specifier: ^4.6.0
+        version: 4.6.0(react@19.0.0)
       isbot:
         specifier: ^5.1.17
         version: 5.1.19
       jotai:
-        specifier: ^2.6.2
-        version: 2.6.2(@types/react@19.0.2)(react@19.0.0)
+        specifier: ^2.11.0
+        version: 2.11.0(@types/react@19.0.2)(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -1318,8 +1318,8 @@ packages:
     resolution: {integrity: sha512-xfSkCAchbdG5PnbrKqFWwia4Bi61nH+wm8wLEqfHDyp7Y3dZzgqS2itV8i4gAq9pC2HsTpwyBC6Ds8VHZ96JlA==}
     engines: {node: '>=14.0.0'}
 
-  '@remixicon/react@4.1.1':
-    resolution: {integrity: sha512-a2WSRfuv94OwSX2AK2IRhDEYAYxL0AOeF5+3boTILpC41e8Mp8ZJ7b2980ekOnJsnkcBofcHi4/GDR9cKTl/Bg==}
+  '@remixicon/react@4.6.0':
+    resolution: {integrity: sha512-bY56maEgT5IYUSRotqy9h03IAKJC85vlKtWFg2FKzfs8JPrkdBAYSa9dxoUSKFwGzup8Ux6vjShs9Aec3jvr2w==}
     peerDependencies:
       react: '>=18.2.0'
 
@@ -3202,8 +3202,8 @@ packages:
     resolution: {integrity: sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==}
     hasBin: true
 
-  jotai@2.6.2:
-    resolution: {integrity: sha512-kl4KguU1Fr+tFiLi3A3h9qPEzhvLTTDA10DO3QZAz6k7BEaQJ+qvSBwolzonnfNI4QzEovyQfUqVgnRxfnnQVQ==}
+  jotai@2.11.0:
+    resolution: {integrity: sha512-zKfoBBD1uDw3rljwHkt0fWuja1B76R7CjznuBO+mSX6jpsO1EBeWNRKpeaQho9yPI/pvCv4recGfgOXGxwPZvQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -6204,7 +6204,7 @@ snapshots:
 
   '@remix-run/router@1.21.0': {}
 
-  '@remixicon/react@4.1.1(react@19.0.0)':
+  '@remixicon/react@4.6.0(react@19.0.0)':
     dependencies:
       react: 19.0.0
 
@@ -8492,7 +8492,7 @@ snapshots:
   jiti@1.21.7:
     optional: true
 
-  jotai@2.6.2(@types/react@19.0.2)(react@19.0.0):
+  jotai@2.11.0(@types/react@19.0.2)(react@19.0.0):
     optionalDependencies:
       '@types/react': 19.0.2
       react: 19.0.0
