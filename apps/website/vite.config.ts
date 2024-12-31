@@ -2,7 +2,6 @@ import { cloudflareDevProxy } from '@react-router/dev/vite/cloudflare';
 import { reactRouter } from '@react-router/dev/vite';
 import autoprefixer from 'autoprefixer';
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import pandacss from '@pandacss/dev/postcss';
 import mdx from '@mdx-js/rollup';
 const isStorybook = process.argv[1]?.includes('storybook');
@@ -32,6 +31,5 @@ export default defineConfig({
       },
     }),
     !isStorybook && reactRouter(),
-    tsconfigPaths(),
   ],
 });

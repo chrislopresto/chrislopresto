@@ -18,8 +18,13 @@ updates:
         patterns:
           - 'react'
           - 'react-dom'
+          - '@types/node'
           - '@types/react'
           - '@types/react-dom'
+      react-router:
+        patterns:
+          - 'react-router'
+          - '@react-router/*'
       remix:
         patterns:
           - '@remix-run/*'
@@ -34,10 +39,12 @@ updates:
       panda:
         patterns:
           - '@pandacss/*'
+          - postcss
+          - autoprefixer
       vite:
         patterns:
           - 'vite'
-          - 'vitest'
+          - '@mdx-js/rollup'
       testing:
         patterns:
           - '@testing-library/*'
@@ -48,8 +55,16 @@ updates:
           - 'typescript'
           - 'eslint'
           - 'eslint-*'
+          - '@eslint/*'
+          - 'globals'
           - '@typescript-eslint/*'
       cloudflare:
         patterns:
           - '@cloudflare/*'
           - 'wrangler'
+          - 'session-context'
+      utils:
+        patterns:
+          - 'jotai'
+          - 'isbot'
+          - '@remixicon/react'
