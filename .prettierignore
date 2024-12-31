@@ -5,5 +5,8 @@ apps/website/functions
 apps/website/public/build
 apps/website/public/storybook
 apps/website/styled-system
+apps/website/chromatic-artifacts
+apps/website/chromatic-diagnostics.json
+apps/website/.react-router
 
 worker-configuration.d.ts

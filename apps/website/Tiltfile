@@ -19,7 +19,7 @@ local_resource(
 )
 local_resource(
   'vitest',
-  serve_cmd='pnpm test',
+  serve_cmd='pnpm test:watch',
 )
 local_resource(
   'lint',
