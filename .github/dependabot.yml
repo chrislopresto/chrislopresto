@@ -49,7 +49,6 @@ updates:
         patterns:
           - '@testing-library/*'
           - 'vitest'
-          - 'jsdom'
       typescript-eslint:
         patterns:
           - 'typescript'

@@ -2,7 +2,10 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   test: {
-    environment: 'jsdom',
-    setupFiles: './tests/setup.ts',
+    browser: {
+      provider: 'playwright',
+      enabled: true,
+      name: 'chromium',
+    },
   },
 });
