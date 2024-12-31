@@ -29,7 +29,6 @@ jobs:
           echo "node `node --version`"
           echo "pnpm `pnpm --version`"
           echo "$CORE_DEPENDENCIES" | xargs pnpm list -r --stream
-          pnpm outdated -r
         env:
           CORE_DEPENDENCIES:
             react
