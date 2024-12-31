@@ -2,7 +2,8 @@
   "files": [],
   "references": [
     { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.cloudflare.json" }
+    { "path": "./tsconfig.cloudflare.json" },
+    { "path": "./tsconfig.storybook-config.json" }
   ],
   "compilerOptions": {
     "checkJs": true,

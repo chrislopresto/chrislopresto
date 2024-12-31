@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview, Decorator } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import './storybook-preview.css';
 import '../app/app.css';
@@ -18,7 +18,7 @@ const preview: Preview = {
 
 export default preview;
 
-export const decorators = [
+export const decorators: Decorator[] = [
   withThemeByDataAttribute({
     themes: { light: 'light', dark: 'dark' },
     defaultTheme: 'light',

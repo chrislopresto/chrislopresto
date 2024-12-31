@@ -11,12 +11,6 @@ type GetLoadContextArgs = {
   };
 };
 
-declare module 'react-router' {
-  interface AppLoadContext extends ReturnType<typeof getLoadContext> {
-    // This will merge the result of `getLoadContext` into the `AppLoadContext`
-  }
-}
-
 export function getLoadContext({ context }: GetLoadContextArgs) {
   const store = getSessionContext();
   store.env = context.cloudflare.env;

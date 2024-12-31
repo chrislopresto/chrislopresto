@@ -48,7 +48,6 @@ const cardImageContainerCss = css({
   },
 });
 
-// eslint-disable-next-line react/prop-types
 const Image: FC<ImageProps> = ({ css: cssProp = {}, variant = 'default', alt = '', ...props }) => {
   const className = css(
     cardImageCss.raw({ variant }),
