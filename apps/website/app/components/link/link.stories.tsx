@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Link } from './link';
 import { NavLink } from 'react-router';
 
+// eslint-disable-next-line import/no-unresolved
 import { withRouter, reactRouterParameters } from 'storybook-addon-remix-react-router';
 
 type StoryComponent = React.ComponentProps<typeof Link> & { demoText?: string };

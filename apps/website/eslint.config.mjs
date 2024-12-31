@@ -9,7 +9,7 @@ import pluginTestingLibrary from 'eslint-plugin-testing-library';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import pluginStorybook from 'eslint-plugin-storybook';
 
-const ignores = ['public/*', 'build/*', 'styled-system/*', '.react-router/*'];
+const ignores = ['public/*', 'build/*', 'styled-system/*', '.react-router/*', 'chromatic-artifacts/*'];
 
 const filesTsAndTsx = ['app/**/*.{ts,tsx}'];
 const filesTsxOnly = ['app/**/*.tsx'];
