@@ -31,7 +31,7 @@ export const Interactive: Story = {
   ),
 };
 
-export const UsingRemixLink: Story = {
+export const UsingReactRouterLink: Story = {
   render: ({ ...args }) => (
     <>
       <Link asChild {...args} css={{ mr: 2 }}>
