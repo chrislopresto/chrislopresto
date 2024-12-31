@@ -2,6 +2,7 @@ import type { MetaFunction } from 'react-router';
 import { Signature } from '../components/signature/signature';
 import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
+import { styled } from '../../styled-system/jsx';
 import {
   RiGithubFill,
   RiLinkedinBoxFill,
@@ -24,12 +25,19 @@ export const meta: MetaFunction = () => {
 
 const ICON_SIZE = 16;
 
+const NameCap = styled('span', { base: { fontSize: { base: '3.5rem', md: '5.25rem' } } });
+const NameSmallCap = styled('span', { base: { fontSize: { base: '5xl', md: '7xl' } } });
+
 function Header() {
   return (
     <section className={css({ vr: true })}>
       <NavLink to="/">
         <Heading as="h1">
-          Chris L<span className={css({ fontSize: { base: '5xl', md: '7xl' } })}>o</span>Presto
+          <NameCap>C</NameCap>
+          <NameSmallCap>hris</NameSmallCap> <NameCap>L</NameCap>
+          <NameSmallCap>o</NameSmallCap>
+          <NameCap>P</NameCap>
+          <NameSmallCap>resto</NameSmallCap>
         </Heading>
       </NavLink>
       <Nav />
