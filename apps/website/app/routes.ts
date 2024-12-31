@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { type RouteConfig, route, index, layout } from '@react-router/dev/routes';
 
 export default [
