@@ -16,3 +16,8 @@ public/storybook/**/*
 
 # React Router
 .react-router
+
+# Chromatic
+chromatic-artifacts
+chromatic-diagnostics.json
+chromatic.log
