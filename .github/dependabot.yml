@@ -39,8 +39,8 @@ updates:
       panda:
         patterns:
           - '@pandacss/*'
-          - postcss
-          - autoprefixer
+          - 'postcss'
+          - 'autoprefixer'
       vite:
         patterns:
           - 'vite'
@@ -49,6 +49,9 @@ updates:
         patterns:
           - '@testing-library/*'
           - 'vitest'
+          - '@vitest/*'
+          - 'chromatic'
+          - 'playwright'
       typescript-eslint:
         patterns:
           - 'typescript'
