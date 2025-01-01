@@ -1,8 +1,6 @@
 import type { MetaFunction } from 'react-router';
 import { Signature } from '../components/signature/signature';
-import { Heading } from '../components/heading/heading';
 import { css } from '../../styled-system/css';
-import { styled } from '../../styled-system/jsx';
 import {
   RiGithubFill,
   RiLinkedinBoxFill,
@@ -15,6 +13,7 @@ import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { useColorScheme } from '../styles/color-scheme';
 import { Nav } from '../components/nav/nav';
 import { NavLink, Outlet } from 'react-router';
+import { NameLede } from '../components/name-lede/name-lede';
 
 export const meta: MetaFunction = () => {
   return [
@@ -24,26 +23,6 @@ export const meta: MetaFunction = () => {
 };
 
 const ICON_SIZE = 16;
-
-const NameCap = styled('span', { base: { fontSize: { base: '3.5rem', md: '5.25rem' } } });
-const NameSmallCap = styled('span', { base: { fontSize: { base: '5xl', md: '7xl' } } });
-
-function Header() {
-  return (
-    <section className={css({ vr: true })}>
-      <NavLink to="/">
-        <Heading as="h1">
-          <NameCap>C</NameCap>
-          <NameSmallCap>hris</NameSmallCap> <NameCap>L</NameCap>
-          <NameSmallCap>o</NameSmallCap>
-          <NameCap>P</NameCap>
-          <NameSmallCap>resto</NameSmallCap>
-        </Heading>
-      </NavLink>
-      <Nav />
-    </section>
-  );
-}
 
 function Footer() {
   const { setLight, setDark, matchSystem } = useColorScheme();
@@ -109,7 +88,12 @@ function Footer() {
 export function Main() {
   return (
     <div>
-      <Header />
+      <section className={css({ vr: true })}>
+        <NavLink to="/">
+          <NameLede />
+        </NavLink>
+        <Nav />
+      </section>
       <section className={css({ vr: true })}>
         <Outlet />
       </section>

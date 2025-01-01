@@ -43,7 +43,10 @@ export const CardImageShowcase: Story = {
           >
             {variant}
           </p>
-          <Card.Image variant={variant} alt="Chris LoPresto speaking at RailsConf 2018" src={railsConf2018Still} />
+          <Card>
+            <Card.Image variant={variant} alt="Chris LoPresto speaking at RailsConf 2018" src={railsConf2018Still} />
+            <Card.Body>I am a card with an image</Card.Body>
+          </Card>
         </div>
       ))}
     </>

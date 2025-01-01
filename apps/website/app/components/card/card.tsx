@@ -19,32 +19,52 @@ type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> &
     css?: SystemStyleObject;
   };
 
+const cardImageContainerCss = css({
+  '--base': '#00ffff',
+  '--bg-blend': 'multiply',
+  '--blur': '0px',
+  '--fg-blend': 'lighten',
+  '--foreground': '#003333',
+  '--opacity': '1',
+  '--spacing': '0px',
+
+  backgroundColor: 'var(--base)',
+  overflow: 'hidden',
+  padding: 'var(--spacing)',
+  position: 'relative',
+  borderTopRadius: 'sm',
+
+  _before: {
+    backgroundColor: 'var(--foreground)',
+    bottom: 0,
+    content: '""',
+    height: '100%',
+    left: 0,
+    mixBlendMode: 'var(--fg-blend)',
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    width: '100%',
+    zIndex: 1,
+  },
+});
+
 export const cardImageCss = cva({
   variants: {
     variant: {
       default: {},
       stylized: {
-        filter: 'grayscale(40%) contrast(130%) brightness(110%)',
-        // mixBlendMode: 'none',
+        filter: 'grayscale(100%) contrast(1) blur(var(--blur))',
+        flex: '1 0 100%',
+        height: '100%',
+        maxWidth: '100%',
+        mixBlendMode: 'var(--bg-blend)',
+        objectFit: 'cover',
+        opacity: 'var(--opacity)',
+        position: 'relative',
+        width: '100%',
       },
     },
-  },
-});
-
-const cardImageContainerCss = css({
-  display: 'inline-block',
-  position: 'relative',
-  lineHeight: 0,
-  background: 'white',
-
-  _after: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    height: '100%',
-    width: '100%',
-    content: '""',
-    background: 'rgba(0, 255, 255, 0.2)',
   },
 });
 
