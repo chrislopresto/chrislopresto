@@ -10,15 +10,6 @@ type StoryComponent = React.ComponentProps<typeof Link> & { demoText?: string };
 
 const meta: Meta<StoryComponent> = {
   title: 'Components/Link',
-  argTypes: {
-    demoText: {
-      type: 'string',
-      name: 'Demo text',
-    },
-  },
-  args: {
-    demoText: 'I am an alluring link',
-  },
 };
 export default meta;
 
@@ -30,6 +21,15 @@ export const Interactive: Story = {
       {demoText}
     </Link>
   ),
+  argTypes: {
+    demoText: {
+      type: 'string',
+      name: 'Demo text',
+    },
+  },
+  args: {
+    demoText: 'I am an alluring link',
+  },
 };
 
 export const UsingReactRouterLink: Story = {
@@ -51,8 +51,5 @@ export const UsingReactRouterLink: Story = {
         handle: 'Foo',
       },
     }),
-  },
-  args: {
-    demoText: 'I am a Remix link',
   },
 };
