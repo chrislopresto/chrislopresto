@@ -1,5 +1,5 @@
 import type { MetaFunction } from 'react-router';
-import { Link as RemixLink } from 'react-router';
+import { Link as ReactRouterLink } from 'react-router';
 import { Heading } from '../../../components/heading/heading';
 import { css } from '../../../../styled-system/css';
 import { Link } from '../../../components/link/link';
@@ -44,17 +44,19 @@ export default function Index() {
         <Heading as="h3" variant="heading">
           Video
         </Heading>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/Egumr5KiTNI"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
+        <div className={css({ aspectRatio: '16/9' })}>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/Egumr5KiTNI"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
         <Link asChild>
-          <RemixLink to="transcript">Full transcript</RemixLink>
+          <ReactRouterLink to="transcript">Full transcript</ReactRouterLink>
         </Link>
       </section>
       <section className={css({ vr: true })}>
@@ -62,12 +64,12 @@ export default function Index() {
           Slides
         </Heading>
         <Link asChild>
-          <RemixLink to="slides" {...externalLinkProps}>
+          <ReactRouterLink to="slides" {...externalLinkProps}>
             <img
               alt="Title slide for the RailsConf 2018 presentation Chris gave called Hot Swapping Our Rails Front End in Secret"
               src="https://get.chrislopresto.com/betterment-rebranding-bonanza/0000.png"
             />
-          </RemixLink>
+          </ReactRouterLink>
         </Link>
       </section>
     </div>
