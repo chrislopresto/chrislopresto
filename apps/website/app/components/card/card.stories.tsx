@@ -4,7 +4,7 @@ import { Card, cardImageCss } from './card';
 import railsConf2018Still from '../../images/chris-lopresto-speaking-at-rails-conf-2018.jpg';
 import { css } from '../../../styled-system/css';
 
-type StoryComponent = React.ComponentProps<typeof Card>;
+type StoryComponent = React.ComponentProps<typeof Card> & typeof cardImageCss;
 
 const meta: Meta<StoryComponent> = {
   title: 'Components/Card',
@@ -22,12 +22,21 @@ export const Simple: Story = {
 };
 
 export const WithImage: Story = {
-  render: () => (
+  render: (args) => (
     <Card>
-      <Card.Image alt="Chris LoPresto speaking at RailsConf 2018" src={railsConf2018Still} />
+      <Card.Image variant={args?.variant} alt="Chris LoPresto speaking at RailsConf 2018" src={railsConf2018Still} />
       <Card.Body>I am a card with an image</Card.Body>
     </Card>
   ),
+  argTypes: {
+    variant: {
+      options: cardImageCss.variantMap.variant,
+      control: { type: 'select' },
+    },
+  },
+  args: {
+    variant: 'default',
+  },
 };
 
 export const CardImageShowcase: Story = {

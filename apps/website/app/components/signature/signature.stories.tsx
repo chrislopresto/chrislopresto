@@ -8,9 +8,6 @@ type StoryComponent = React.ComponentProps<typeof Signature> & { color?: string 
 const meta: Meta<StoryComponent> = {
   title: 'Components/Signature',
   component: Signature,
-  parameters: {
-    layout: 'centered',
-  },
   argTypes: {
     variant: {
       options: signatureCss.variantMap.variant,
