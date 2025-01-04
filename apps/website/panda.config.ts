@@ -1,4 +1,6 @@
 import { defineConfig, defineTextStyles } from '@pandacss/dev';
+import { cssReset } from './theme/css-reset';
+import pandaPreset from '@pandacss/preset-panda';
 
 export const textStyles = defineTextStyles({
   title: {
@@ -133,4 +135,6 @@ export default defineConfig({
       color: 'default',
     },
   },
+
+  presets: [pandaPreset, cssReset],
 });
