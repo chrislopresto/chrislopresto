@@ -3,6 +3,7 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import './storybook-preview.css';
 import '../app/app.css';
 import '../app/fonts';
+import { storybookAddonThemes as themes } from './color-modes';
 
 const preview: Preview = {
   parameters: {
@@ -20,7 +21,7 @@ export default preview;
 
 export const decorators: Decorator[] = [
   withThemeByDataAttribute({
-    themes: { light: 'light', dark: 'dark' },
+    themes,
     defaultTheme: 'light',
     attributeName: 'data-color-mode',
   }),
