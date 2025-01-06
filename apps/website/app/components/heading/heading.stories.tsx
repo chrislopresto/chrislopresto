@@ -4,6 +4,8 @@ import { css } from '../../../styled-system/css';
 
 import { Heading, headingCss } from './heading';
 
+import { chromaticModes as modes } from '../../../.storybook/color-modes';
+
 type StoryComponent = React.ComponentProps<typeof Heading> & { demoText?: string; color?: string };
 
 const meta: Meta<StoryComponent> = {
@@ -31,6 +33,9 @@ const meta: Meta<StoryComponent> = {
     demoText: 'I am a sensationalistic headline',
     as: 'h2',
     color: '',
+  },
+  parameters: {
+    chromatic: { modes },
   },
 };
 export default meta;

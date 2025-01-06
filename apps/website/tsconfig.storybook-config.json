@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": [".storybook/*", "app/fonts/index.ts", ".storybook/main.ts"],
+  "include": [".storybook/*", "app/fonts/index.ts", ".storybook/main.ts", ".storybook/modes.ts"],
   "compilerOptions": {
     "composite": true,
     "strict": true,
