@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": ">=14"
+    "node": ">=22"
   },
   "scripts": {
     "format:check": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,html,css,json}\" --check",
