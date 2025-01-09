@@ -12,7 +12,12 @@ type ComponentProps = {
 type LinkProps = ComponentProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const activeCss = css.raw({
-  textShadow: '2px 2px 10px token(colors.accent)',
+  _light: {
+    textShadow: '1px 1px 3px token(colors.accent/50)',
+  },
+  _dark: {
+    textShadow: '1px 1px 2px token(colors.accent/90)',
+  },
   textDecorationColor: 'accent',
   textDecorationThickness: '1px',
 });
@@ -25,7 +30,18 @@ export const linkCss = css.raw({
   textDecorationStyle: 'dotted',
   _hover: activeCss,
   _active: activeCss,
-  _focus: activeCss,
+  _focus: {
+    ...activeCss,
+    outlineColor: 'transparent',
+    _light: {
+      boxShadow: '0 0 1px 1px token(colors.accent/50)',
+      borderRadius: '2px',
+    },
+    _dark: {
+      boxShadow: '0 0 1px 2.5px white',
+      borderRadius: '1px',
+    },
+  },
 });
 
 export function Link({ css: cssProp = {}, asChild = false, children, ...props }: LinkProps) {
