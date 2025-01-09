@@ -3,7 +3,7 @@ import { useAtom } from 'jotai';
 import { useState, useEffect } from 'react';
 
 type ColorScheme = 'light' | 'dark';
-const COLOR_SCHEME_KEY = '@chrislopresto/website/colorScheme';
+export const COLOR_SCHEME_KEY = '@chrislopresto/website/colorScheme';
 
 const colorSchemeAtom = atomWithStorage<ColorScheme | undefined>(COLOR_SCHEME_KEY, undefined);
 
