@@ -35,7 +35,7 @@
     "session-context": "^0.0.6"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241230.0",
+    "@cloudflare/workers-types": "^4.20250109.0",
     "@eslint/js": "^9.17.0",
     "@mdx-js/rollup": "^3.1.0",
     "@pandacss/dev": "^0.51.1",
@@ -76,7 +76,7 @@
     "typescript-eslint": "^8.19.1",
     "vite": "^6.0.7",
     "vitest": "^2.1.8",
-    "wrangler": "^3.100.0"
+    "wrangler": "^3.101.0"
   },
   "engines": {
     "node": ">=22"
