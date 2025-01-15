@@ -127,8 +127,8 @@ importers:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.5.1)
       chromatic:
-        specifier: ^11.23.0
-        version: 11.23.0
+        specifier: ^11.24.0
+        version: 11.24.0
       eslint:
         specifier: ^9.18.0
         version: 9.18.0(jiti@1.21.7)
@@ -197,8 +197,8 @@ packages:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
     engines: {node: '>=6.0.0'}
 
-  '@asamuzakjp/css-color@2.8.2':
-    resolution: {integrity: sha512-RtWv9jFN2/bLExuZgFFZ0I3pWWeezAHGgrmjqGGWclATl1aDe3yhCUaI0Ilkp6OCk9zX7+FjvDasEX8Q9Rxc5w==}
+  '@asamuzakjp/css-color@2.8.3':
+    resolution: {integrity: sha512-GIc76d9UI1hCvOATjZPyHFmE5qhRccp3/zGfMPapK3jBi+yocEzp6BBB0UnfRYP9NP4FANqUZYb0hnfs3TM3hw==}
 
   '@aws-crypto/crc32@5.2.0':
     resolution: {integrity: sha512-nLbCWqQNgUiwwtFsen1AdzAtvuLRsQS8rYgMuxCrdKf9kOssamGLuPwyTY9wyYblNr9+1XM8v6zoDTPPSIeANg==}
@@ -2659,8 +2659,8 @@ packages:
     resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
     engines: {node: '>= 14.16.0'}
 
-  chromatic@11.23.0:
-    resolution: {integrity: sha512-9LgsRyLe9FAGpWh2p3A2dec1jrP94+PTVAieQ5mreBAYaqlnmuZ1RC+IIw4WqiSRYmL7WHNBVkuVXVxJk6AUPg==}
+  chromatic@11.24.0:
+    resolution: {integrity: sha512-IocIxnxera27bRA51HHtfV9/Daqgj0E4BWYV12/nlf7qPJW1T82raQ5ypxZDJA4bXQywxOzpG2e6WWYvz/AwHA==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -3975,10 +3975,6 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
-
-  lru-cache@11.0.2:
-    resolution: {integrity: sha512-123qHRfJBmo2jXDbo/a5YOQrJoHF/GNQTLzQ5+IdK5pWpceK17yRc6ozlWd25FxvGKQbIUs91fDFkXmDHTKcyA==}
-    engines: {node: 20 || >=22}
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -5799,13 +5795,13 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.22
 
-  '@asamuzakjp/css-color@2.8.2':
+  '@asamuzakjp/css-color@2.8.3':
     dependencies:
       '@csstools/css-calc': 2.1.1(@csstools/css-parser-algorithms@3.0.4(@csstools/css-tokenizer@3.0.3))(@csstools/css-tokenizer@3.0.3)
       '@csstools/css-color-parser': 3.0.7(@csstools/css-parser-algorithms@3.0.4(@csstools/css-tokenizer@3.0.3))(@csstools/css-tokenizer@3.0.3)
       '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
       '@csstools/css-tokenizer': 3.0.3
-      lru-cache: 11.0.2
+      lru-cache: 10.4.3
     optional: true
 
   '@aws-crypto/crc32@5.2.0':
@@ -8865,7 +8861,7 @@ snapshots:
     dependencies:
       readdirp: 4.0.2
 
-  chromatic@11.23.0: {}
+  chromatic@11.24.0: {}
 
   cli-cursor@5.0.0:
     dependencies:
@@ -8975,7 +8971,7 @@ snapshots:
 
   cssstyle@4.2.1:
     dependencies:
-      '@asamuzakjp/css-color': 2.8.2
+      '@asamuzakjp/css-color': 2.8.3
       rrweb-cssom: 0.8.0
     optional: true
 
@@ -10399,9 +10395,6 @@ snapshots:
   lru-cache@10.1.0: {}
 
   lru-cache@10.4.3: {}
-
-  lru-cache@11.0.2:
-    optional: true
 
   lru-cache@5.1.1:
     dependencies:
