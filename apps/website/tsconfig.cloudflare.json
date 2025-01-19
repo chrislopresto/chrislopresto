@@ -7,7 +7,8 @@
     "app/**/.client/**/*",
     "workers/**/*",
     "worker-configuration.d.ts",
-    ".storybook/*"
+    ".storybook/*",
+    "theme/**/*"
   ],
   "compilerOptions": {
     "composite": true,
