@@ -37,7 +37,7 @@ export const Example: Story = {
     );
   },
   args: {
-    color: 'cyan',
+    color: 'magenta',
   },
   argTypes: {
     css: {
