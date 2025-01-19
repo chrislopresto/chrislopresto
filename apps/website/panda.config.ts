@@ -1,53 +1,7 @@
-import { defineConfig, defineTextStyles } from '@pandacss/dev';
+import { defineConfig } from '@pandacss/dev';
 import { cssReset } from './theme/css-reset';
 import pandaPreset from '@pandacss/preset-panda';
-
-export const textStyles = defineTextStyles({
-  title: {
-    description: 'Zazzy title used for sci-fi-like effect',
-    value: {
-      fontFamily: 'marvinVisionsBig',
-      fontWeight: 'bold',
-      fontSize: { base: '6xl', md: '8xl' },
-      lineHeight: 0.85,
-    },
-  },
-  subtitle: {
-    description: 'Zazzy subtitle used for sci-fi-like effect',
-    value: {
-      fontFamily: 'marvinVisionsBig',
-      fontWeight: 'bold',
-      fontSize: { base: '2xl', md: '4xl' },
-      lineHeight: 0.85,
-    },
-  },
-  heading: {
-    description: 'Heading used for non-sci-fi-like delineation',
-    value: {
-      fontFamily: 'Helvetica, sans-serif',
-      fontWeight: 'bold',
-      fontSize: 'lg',
-      lineHeight: 'snug',
-    },
-  },
-  subheading: {
-    description: 'Subheading used for further non-sci-fi-like delineation',
-    value: {
-      fontFamily: 'Helvetica, sans-serif',
-      fontWeight: 'bold',
-      fontSize: 'xs',
-      lineHeight: 1.3,
-    },
-  },
-  body: {
-    description: 'Body copy',
-    value: {
-      fontFamily: 'Helvetica, sans-serif',
-      fontSize: 'sm',
-      lineHeight: 1.3,
-    },
-  },
-});
+import { textStyles } from './theme/text-styles';
 
 export default defineConfig({
   outExtension: 'js',
