@@ -35,7 +35,7 @@ function App() {
           }}
         />
       </head>
-      <body className={css({ p: '2', minWidth: '320px', maxWidth: '1000px', textStyle: 'body', bg: 'background' })}>
+      <body className={css({ minWidth: '320px', maxWidth: '1000px', textStyle: 'body', bg: 'background' })}>
         <Outlet />
         <ScrollRestoration />
         <Scripts />

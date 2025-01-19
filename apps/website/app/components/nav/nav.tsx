@@ -9,14 +9,36 @@ type NavProps = {
 };
 
 export function Nav({ css: cssProp = {} }: NavProps) {
-  const className = css(hstack.raw({ gap: 3 }), cssProp);
+  const className = css(hstack.raw({ gap: 4, textTransform: 'uppercase' }), cssProp);
   return (
     <div className={className}>
       <Link asChild>
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+          to="/"
+          className={css({
+            textDecoration: 'none',
+            textUnderlineOffset: '14px',
+            _hover: { textDecoration: 'underline' },
+            _active: { textDecoration: 'underline' },
+            _focus: { textDecoration: 'underline' },
+          })}
+        >
+          Home
+        </NavLink>
       </Link>
       <Link asChild>
-        <NavLink to="/thoughts">Thoughts</NavLink>
+        <NavLink
+          to="/thoughts"
+          className={css({
+            textDecoration: 'none',
+            textUnderlineOffset: '14px',
+            _hover: { textDecoration: 'underline' },
+            _active: { textDecoration: 'underline' },
+            _focus: { textDecoration: 'underline' },
+          })}
+        >
+          Thoughts
+        </NavLink>
       </Link>
     </div>
   );

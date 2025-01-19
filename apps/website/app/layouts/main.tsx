@@ -58,7 +58,6 @@ function Footer() {
             chrislopresto
           </a>
         </div>
-
         <AccessibleIcon label="Light theme">
           <RiSunLine
             size={ICON_SIZE}
@@ -87,18 +86,31 @@ function Footer() {
 
 export function Main() {
   return (
-    <div>
-      <section className={css({ vr: true })}>
-        <NavLink to="/">
-          <NameLede />
-        </NavLink>
-        <Nav />
+    <>
+      <section
+        className={css({
+          zIndex: '1',
+          position: 'sticky',
+          top: '0',
+          bg: 'background',
+          p: '2',
+        })}
+      >
+        <div className={css({ display: 'flex', gap: '8', alignItems: 'center' })}>
+          <NavLink to="/">
+            <NameLede css={{ display: 'inline' }} />
+          </NavLink>
+          <Nav css={{ display: 'inline-flex' }} />
+        </div>
       </section>
-      <section className={css({ vr: true })}>
+      <section className={css({ px: '2' })}></section>
+      <section className={css({ p: '2' })}>
         <Outlet />
       </section>
-      <Footer />
-    </div>
+      <section className={css({ p: '2' })}>
+        <Footer />
+      </section>
+    </>
   );
 }
 
