@@ -60,7 +60,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
         </p>
       </section>
 
-      <section>
+      <section className={css({ textStyle: 'deemphasized' })}>
         <br />
         <br />
         <hr />
