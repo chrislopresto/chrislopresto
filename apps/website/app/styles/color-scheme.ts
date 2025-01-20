@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 type ColorScheme = 'light' | 'dark';
 export const COLOR_SCHEME_KEY = '@chrislopresto/website/colorScheme';
+export const PREFERS_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 const colorSchemeAtom = atomWithStorage<ColorScheme | undefined>(COLOR_SCHEME_KEY, undefined);
 
@@ -12,7 +13,7 @@ export function useColorScheme() {
   const [colorScheme, setColorScheme] = useState<ColorScheme | undefined>(storedColorScheme);
 
   useEffect(() => {
-    const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const colorSchemeMediaQuery = window.matchMedia(PREFERS_DARK_MEDIA_QUERY);
     const systemColorScheme: ColorScheme = colorSchemeMediaQuery.matches ? 'dark' : 'light';
     setColorScheme(storedColorScheme || systemColorScheme);
 
