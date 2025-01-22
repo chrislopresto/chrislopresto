@@ -26,7 +26,7 @@ function App() {
               if (typeof window !== 'undefined') {
                 const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 const preferredColorScheme = colorSchemeMediaQuery.matches ? 'dark' : 'light';
-                const storedColorScheme = localStorage.getItem('${COLOR_SCHEME_KEY}')?.replace(/"/g, '');
+                const storedColorScheme = JSON.parse(localStorage.getItem('${COLOR_SCHEME_KEY}') || '""');
                 const resolvedColorScheme = storedColorScheme || preferredColorScheme;
 
                 document.documentElement.setAttribute('data-color-mode', resolvedColorScheme);
