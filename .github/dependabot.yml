@@ -57,6 +57,7 @@ updates:
           - 'typescript'
           - 'eslint'
           - 'eslint-*'
+          - 'jiti'
           - '@eslint/*'
           - 'globals'
           - '@typescript-eslint/*'

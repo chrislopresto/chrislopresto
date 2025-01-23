@@ -8,6 +8,7 @@ import pluginImport from 'eslint-plugin-import';
 import pluginTestingLibrary from 'eslint-plugin-testing-library';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import pluginStorybook from 'eslint-plugin-storybook';
+import type { Linter } from 'eslint';
 
 const ignores = ['public/*', 'build/*', 'styled-system/*', '.react-router/*', 'chromatic-artifacts/*'];
 
@@ -17,30 +18,30 @@ const filesTestsOnly = ['app/**/*.test.{ts,tsx}'];
 const filesStories = ['app/**/*.stories.{ts,tsx}'];
 const filesCjs = ['**/*.cjs'];
 
-const customConfigTs = [
+const customConfigTs: Linter.Config[] = [
   ...eslintTs.configs.recommended.map((config) => ({
     ...config,
     files: filesTsAndTsx,
     plugins: {
       react: pluginReact,
     },
-  })),
+  } as Linter.Config)),
   ...eslintTs.configs.stylistic.map((config) => ({
     ...config,
     files: filesTsAndTsx,
     rules: {
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     },
-  })),
+  } as Linter.Config)),
 ];
 
-const customConfigReact = {
+const customConfigReact: Linter.Config = {
   files: filesTsAndTsx,
   ...pluginReact.configs.flat.recommended,
   ...pluginReact.configs.flat['jsx-runtime'],
 };
 
-const customConfigReactHooks = {
+const customConfigReactHooks: Linter.Config = {
   files: filesTsAndTsx,
   plugins: {
     'react-hooks': pluginReactHooks,
@@ -48,7 +49,7 @@ const customConfigReactHooks = {
   rules: pluginReactHooks.configs.recommended.rules,
 };
 
-const customConfigImport = {
+const customConfigImport: Linter.Config = {
   ...pluginImport.flatConfigs.recommended,
   settings: {
     'import/resolver': {
@@ -59,7 +60,7 @@ const customConfigImport = {
   },
 };
 
-const customConfigTestingLibrary = {
+const customConfigTestingLibrary: Linter.Config = {
   files: filesTestsOnly,
   ...pluginTestingLibrary.configs['flat/react'],
   rules: {
@@ -70,7 +71,7 @@ const customConfigTestingLibrary = {
   },
 };
 
-const customConfigCjs = {
+const customConfigCjs: Linter.Config = {
   files: filesCjs,
   languageOptions: {
     sourceType: 'commonjs',
@@ -80,7 +81,7 @@ const customConfigCjs = {
   },
 };
 
-const customConfigJsxA11y = {
+const customConfigJsxA11y: Linter.Config = {
   files: filesTsxOnly,
   ...pluginJsxA11y.flatConfigs.recommended,
   languageOptions: {
@@ -92,7 +93,7 @@ const customConfigJsxA11y = {
   },
 };
 
-const customConfigStorybook = [
+const customConfigStorybook: Linter.Config[] = [
   ...pluginStorybook.configs['flat/recommended'],
   {
     files: filesStories,
