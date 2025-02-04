@@ -28,7 +28,7 @@
     "@react-router/serve": "^7.1.4",
     "@remixicon/react": "^4.6.0",
     "isbot": "^5.1.22",
-    "jotai": "^2.11.2",
+    "jotai": "^2.11.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.1.4",
