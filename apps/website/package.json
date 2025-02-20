@@ -70,7 +70,7 @@
     "globals": "^15.15.0",
     "jiti": "^2.4.2",
     "playwright": "^1.50.1",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.3",
     "storybook": "^8.5.8",
     "storybook-addon-remix-react-router": "4.0.1",
     "typescript": "^5.7.3",
