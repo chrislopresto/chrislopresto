@@ -58,7 +58,7 @@
     "@types/react-dom": "^19.0.4",
     "@vitest/browser": "^3.0.6",
     "autoprefixer": "^10.4.20",
-    "chromatic": "^11.26.1",
+    "chromatic": "^11.27.0",
     "eslint": "^9.21.0",
     "eslint-import-resolver-typescript": "^3.8.3",
     "eslint-plugin-import": "^2.31.0",
