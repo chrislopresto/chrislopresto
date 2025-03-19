@@ -78,7 +78,7 @@
     "vite": "^6.2.2",
     "vitest": "^3.0.9",
     "vitest-when": "^0.6.0",
-    "wrangler": "^4.1.0"
+    "wrangler": "^4.2.0"
   },
   "engines": {
     "node": ">=22"
