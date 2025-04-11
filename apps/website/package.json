@@ -23,15 +23,15 @@
   "dependencies": {
     "@radix-ui/react-accessible-icon": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
-    "@react-router/cloudflare": "^7.4.1",
-    "@react-router/node": "^7.4.1",
-    "@react-router/serve": "^7.4.1",
+    "@react-router/cloudflare": "^7.5.0",
+    "@react-router/node": "^7.5.0",
+    "@react-router/serve": "^7.5.0",
     "@remixicon/react": "^4.6.0",
     "isbot": "^5.1.25",
     "jotai": "^2.12.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.4.1",
+    "react-router": "^7.5.0",
     "session-context": "^0.0.6"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "@mdx-js/rollup": "^3.1.0",
     "@pandacss/dev": "^0.53.3",
     "@pandacss/preset-panda": "^0.53.3",
-    "@react-router/dev": "^7.4.1",
+    "@react-router/dev": "^7.5.0",
     "@storybook/addon-essentials": "^8.6.11",
     "@storybook/addon-interactions": "^8.6.11",
     "@storybook/addon-links": "^8.6.11",
