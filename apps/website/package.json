@@ -21,7 +21,7 @@
     "cloudflare:build": "echo hello ; pwd ; mkdir -p ./build/client ; mkdir -p ./build/server ; ls build/client ; ls build/server; echo done; pnpm run build && pnpm run storybook:build && cp -r ./public/storybook ./build/client/"
   },
   "dependencies": {
-    "@radix-ui/react-accessible-icon": "^1.1.3",
+    "@radix-ui/react-accessible-icon": "^1.1.4",
     "@radix-ui/react-slot": "^1.2.0",
     "@react-router/cloudflare": "^7.5.3",
     "@react-router/node": "^7.5.3",
