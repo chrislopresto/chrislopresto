@@ -23,7 +23,7 @@
   "dependencies": {
     "@radix-ui/react-accessible-icon": "^1.1.6",
     "@radix-ui/react-slot": "^1.2.2",
-    "@react-router/cloudflare": "^7.5.3",
+    "@react-router/cloudflare": "^7.6.1",
     "@react-router/node": "^7.5.3",
     "@react-router/serve": "^7.5.3",
     "@remixicon/react": "^4.6.0",
