@@ -54,7 +54,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
         </p>
         <Heading variant="heading">A miscellaneous blurb...</Heading>
         <p className={css({ vr: true })}>
-          Chris is an Eagle Scout who has visited 46 of the 50 states and ridden a private elevator with a pope
+          Chris is an Eagle Scout who has visited 47 of the 50 states and ridden a private elevator with a pope
           <sup>4</sup>. He is always game to debate which is better, cake or pie
           <sup>5</sup>.
         </p>
