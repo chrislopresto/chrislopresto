@@ -1,22 +1,11 @@
 local_resource(
-  'panda init',
-  cmd='pnpm panda',
-)
-local_resource(
-  'panda',
-  serve_cmd='pnpm panda -w',
-  resource_deps=['panda init'],
-)
-local_resource(
   'storybook',
   serve_cmd='pnpm storybook',
-  resource_deps=['panda'],
   links=['http://localhost:6006'],
 )
 local_resource(
   'dev-server',
   serve_cmd='pnpm dev',
-  resource_deps=['panda'],
   links=['http://localhost:5173'],
 )
 local_resource(
