@@ -11,6 +11,7 @@ local_resource(
   'storybook',
   serve_cmd='pnpm storybook',
   resource_deps=['panda'],
+  links=['http://localhost:6006'],
 )
 local_resource(
   'dev-server',
