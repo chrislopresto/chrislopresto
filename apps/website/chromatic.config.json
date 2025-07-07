@@ -6,5 +6,6 @@
   "outputDir": "chromatic-artifacts",
   "debug": true,
   "onlyChanged": true,
-  "zip": true
+  "zip": true,
+  "exitOnceUploaded": true
 }
