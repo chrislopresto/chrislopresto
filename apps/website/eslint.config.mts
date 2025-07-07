@@ -53,6 +53,9 @@ const customConfigImport: Linter.Config = {
   ...pluginImport.flatConfigs.recommended,
   settings: {
     'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
       node: {
         extensions: ['.js', '.ts', '.tsx'],
       },

@@ -1,6 +1,5 @@
 import { expect, describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-// eslint-disable-next-line import/named
 import { composeStories } from '@storybook/react-vite';
 
 import * as stories from './signature.stories';
