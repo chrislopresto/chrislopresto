@@ -16,6 +16,7 @@ local_resource(
   'dev-server',
   serve_cmd='pnpm dev',
   resource_deps=['panda'],
+  links=['http://localhost:5173'],
 )
 local_resource(
   'vitest',

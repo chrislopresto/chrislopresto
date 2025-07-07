@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { COLOR_SCHEME_KEY, PREFERS_DARK_MEDIA_QUERY, useColorScheme } from './color-scheme';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-// eslint-disable-next-line import/no-unresolved
 import { when } from 'vitest-when';
 import { Provider } from 'jotai';
 
