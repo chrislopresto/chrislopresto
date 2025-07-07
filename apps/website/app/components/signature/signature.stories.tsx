@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Signature, signatureCss } from './signature';
 import { css } from '../../../styled-system/css';

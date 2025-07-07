@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Card, cardImageCss } from './card';
 import railsConf2018Still from '../../images/chris-lopresto-speaking-at-rails-conf-2018.jpg';
