@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Nav } from './nav';
 
-// eslint-disable-next-line import/no-unresolved
 import { withRouter, reactRouterParameters } from 'storybook-addon-remix-react-router';
 
 type StoryComponent = React.ComponentProps<typeof Nav>;

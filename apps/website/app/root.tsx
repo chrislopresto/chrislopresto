@@ -4,7 +4,6 @@ import { css } from '../styled-system/css';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import type { Route } from './+types/root';
-// eslint-disable-next-line import/no-unresolved
 import stylesheet from './app.css?url';
 
 import { Provider } from 'jotai';
