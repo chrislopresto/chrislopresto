@@ -30,7 +30,7 @@ const meta: Meta<StoryComponent> = {
   },
   args: {
     variant: 'title',
-    demoText: 'I am a sensationalistic headline',
+    demoText: "DON'T PANIC",
     as: 'h2',
     color: '',
   },
