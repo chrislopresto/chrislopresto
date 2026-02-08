@@ -1,15 +1,11 @@
-import type { ReactNode } from 'react';
 import { css } from '../../../styled-system/css';
 import type { SystemStyleObject } from '../../../styled-system/types';
-import { Slot } from '@radix-ui/react-slot';
+import { useRender } from '@base-ui/react/use-render';
+import { mergeProps } from '@base-ui/react/merge-props';
 
-type ComponentProps = {
+type LinkProps = useRender.ComponentProps<'a'> & {
   css?: SystemStyleObject;
-  children?: ReactNode;
-  asChild?: boolean;
 };
-
-type LinkProps = ComponentProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const activeCss = css.raw({
   _light: {
@@ -44,12 +40,15 @@ export const linkCss = css.raw({
   },
 });
 
-export function Link({ css: cssProp = {}, asChild = false, children, ...props }: LinkProps) {
-  const className = css(linkCss, cssProp);
-  const LinkElement = asChild ? Slot : 'a';
-  return (
-    <LinkElement className={className} {...props}>
-      {children}
-    </LinkElement>
-  );
+export function Link({ css: cssProp = {}, render, ...props }: LinkProps) {
+  return useRender({
+    defaultTagName: 'a',
+    render,
+    props: mergeProps<'a'>(
+      {
+        className: css(linkCss, cssProp),
+      },
+      props,
+    ),
+  });
 }
