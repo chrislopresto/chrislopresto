@@ -11,9 +11,9 @@ import { Provider } from 'jotai';
 export const links: Route.LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
 
 function App() {
-  const { colorScheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
-    <html lang="en" data-color-mode={colorScheme}>
+    <html lang="en" {...(colorMode ? { 'data-color-mode': colorMode } : {})}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,11 +24,11 @@ function App() {
             __html: `
               if (typeof window !== 'undefined') {
                 const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                const preferredColorScheme = colorSchemeMediaQuery.matches ? 'dark' : 'light';
-                const storedColorScheme = JSON.parse(localStorage.getItem('${COLOR_MODE_KEY}') || '""');
-                const resolvedColorScheme = storedColorScheme || preferredColorScheme;
+                const preferredColorMode = colorSchemeMediaQuery.matches ? 'dark' : 'light';
+                const storedColorMode = JSON.parse(localStorage.getItem('${COLOR_MODE_KEY}') || '""');
+                const resolvedColorMode = storedColorMode || preferredColorMode;
 
-                document.documentElement.setAttribute('data-color-mode', resolvedColorScheme);
+                document.documentElement.setAttribute('data-color-mode', resolvedColorMode);
               }
             `,
           }}
