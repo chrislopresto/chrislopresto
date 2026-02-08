@@ -1,11 +1,16 @@
 import { defineConfig } from 'vite';
+import { playwright } from '@vitest/browser-playwright';
 
 export default defineConfig({
   test: {
     browser: {
-      provider: 'playwright',
       enabled: true,
-      name: 'chromium',
+      instances: [
+        {
+          browser: 'chromium',
+          provider: playwright(),
+        },
+      ],
     },
   },
 });
