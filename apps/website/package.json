@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
-    "@radix-ui/react-accessible-icon": "^1.1.8",
     "@react-router/cloudflare": "^7.13.0",
     "@react-router/node": "^7.13.0",
     "@react-router/serve": "^7.13.0",
