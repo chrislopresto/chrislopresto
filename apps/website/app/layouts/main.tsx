@@ -10,7 +10,7 @@ import {
   RiRefreshLine,
 } from '@remixicon/react';
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
-import { useColorScheme } from '../styles/color-scheme';
+import { useColorMode } from '../styles/color-mode';
 import { Nav } from '../components/nav/nav';
 import { NavLink, Outlet } from 'react-router';
 import { NameLede } from '../components/name-lede/name-lede';
@@ -25,7 +25,7 @@ export const meta: MetaFunction = () => {
 const ICON_SIZE = 16;
 
 function Footer() {
-  const { setLight, setDark, matchSystem } = useColorScheme();
+  const { setLight, setDark, matchSystem } = useColorMode();
 
   return (
     <>

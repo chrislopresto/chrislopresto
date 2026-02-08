@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { COLOR_SCHEME_KEY, PREFERS_DARK_MEDIA_QUERY, useColorScheme } from './color-scheme';
+import { COLOR_MODE_KEY, PREFERS_DARK_MEDIA_QUERY, useColorMode } from './color-mode';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { when } from 'vitest-when';
 import { Provider } from 'jotai';
@@ -19,7 +19,7 @@ const matchMediaMatchesFalse = {
 };
 
 beforeEach(() => {
-  localStorage.removeItem(COLOR_SCHEME_KEY);
+  localStorage.removeItem(COLOR_MODE_KEY);
 });
 
 afterEach(() => {
@@ -34,17 +34,17 @@ describe('with a system preference for dark', () => {
   });
 
   it('gets the default color scheme', () => {
-    const { result } = renderHook(() => useColorScheme(), { wrapper });
+    const { result } = renderHook(() => useColorMode(), { wrapper });
 
-    expect(result.current.colorScheme).toBe('dark');
+    expect(result.current.colorMode).toBe('dark');
   });
 
   it('sets the color scheme', () => {
-    const { result, rerender } = renderHook(() => useColorScheme(), { wrapper });
+    const { result, rerender } = renderHook(() => useColorMode(), { wrapper });
 
     result.current.setLight();
     rerender();
-    expect(result.current.colorScheme).toBe('light');
+    expect(result.current.colorMode).toBe('light');
   });
 });
 
@@ -56,23 +56,23 @@ describe('with a system preference for light', () => {
   });
 
   it('gets the default color scheme', () => {
-    const { result } = renderHook(() => useColorScheme(), { wrapper });
+    const { result } = renderHook(() => useColorMode(), { wrapper });
 
-    expect(result.current.colorScheme).toBe('light');
+    expect(result.current.colorMode).toBe('light');
   });
 
   it('sets the color scheme', () => {
-    const { result, rerender } = renderHook(() => useColorScheme(), { wrapper });
+    const { result, rerender } = renderHook(() => useColorMode(), { wrapper });
 
     result.current.setDark();
     rerender();
-    expect(result.current.colorScheme).toBe('dark');
+    expect(result.current.colorMode).toBe('dark');
   });
 });
 
 describe('with a stored color scheme of dark and a system preference for light', () => {
   beforeEach(() => {
-    localStorage.setItem(COLOR_SCHEME_KEY, JSON.stringify('dark'));
+    localStorage.setItem(COLOR_MODE_KEY, JSON.stringify('dark'));
 
     const matchMediaMock = vi.fn();
     when(matchMediaMock).calledWith(PREFERS_DARK_MEDIA_QUERY).thenReturn(matchMediaMatchesFalse);
@@ -80,32 +80,32 @@ describe('with a stored color scheme of dark and a system preference for light',
   });
 
   it('gets the stored color scheme', () => {
-    const { result } = renderHook(() => useColorScheme(), { wrapper });
+    const { result } = renderHook(() => useColorMode(), { wrapper });
 
-    expect(result.current.colorScheme).toBe('dark');
+    expect(result.current.colorMode).toBe('dark');
   });
 
   it('matches the system color scheme', () => {
-    const { result, rerender } = renderHook(() => useColorScheme(), { wrapper });
+    const { result, rerender } = renderHook(() => useColorMode(), { wrapper });
 
-    expect(result.current.colorScheme).toBe('dark');
+    expect(result.current.colorMode).toBe('dark');
 
     result.current.matchSystem();
     rerender();
-    expect(result.current.colorScheme).toBe('light');
+    expect(result.current.colorMode).toBe('light');
   });
 
   it('toggles the color scheme', () => {
-    const { result, rerender } = renderHook(() => useColorScheme(), { wrapper });
+    const { result, rerender } = renderHook(() => useColorMode(), { wrapper });
 
-    expect(result.current.colorScheme).toBe('dark');
-
-    result.current.toggle();
-    rerender();
-    expect(result.current.colorScheme).toBe('light');
+    expect(result.current.colorMode).toBe('dark');
 
     result.current.toggle();
     rerender();
-    expect(result.current.colorScheme).toBe('dark');
+    expect(result.current.colorMode).toBe('light');
+
+    result.current.toggle();
+    rerender();
+    expect(result.current.colorMode).toBe('dark');
   });
 });
