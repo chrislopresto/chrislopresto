@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: 'npm'
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 1
     rebase-strategy: 'disabled'
     directory: '/'
     schedule:
@@ -14,39 +14,33 @@ updates:
           - 'husky'
           - 'lint-staged'
           - 'prettier'
-      react:
+      react-ish:
         patterns:
           - 'react'
           - 'react-dom'
           - '@types/node'
           - '@types/react'
           - '@types/react-dom'
-      react-router:
-        patterns:
           - 'react-router'
           - '@react-router/*'
-      remix:
+          - 'jotai'
+          - 'isbot'
+          - '@remixicon/react'
+      ui:
         patterns:
-          - '@remix-run/*'
-      radix:
-        patterns:
-          - '@radix-ui/*'
+          - '@base-ui/*'
+          - '@pandacss/*'
+          - 'postcss'
+          - 'autoprefixer'
       storybook:
         patterns:
           - 'storybook'
           - '@storybook/*'
           - 'storybook-addon-remix-react-router'
-      panda:
-        patterns:
-          - '@pandacss/*'
-          - 'postcss'
-          - 'autoprefixer'
-      vite:
+      testing:
         patterns:
           - 'vite'
           - '@mdx-js/rollup'
-      testing:
-        patterns:
           - '@testing-library/*'
           - 'vitest'
           - '@vitest/*'
@@ -66,8 +60,3 @@ updates:
           - '@cloudflare/*'
           - 'wrangler'
           - 'session-context'
-      utils:
-        patterns:
-          - 'jotai'
-          - 'isbot'
-          - '@remixicon/react'
