@@ -69,12 +69,8 @@ export const Showcase: Story = {
 export const UsingReactRouterLink: Story = {
   render: ({ ...args }) => (
     <>
-      <Link asChild {...args} css={{ mr: 2 }}>
-        <NavLink to="/foo">Link to current route</NavLink>
-      </Link>
-      <Link asChild {...args}>
-        <NavLink to="/fuf">Link to another route</NavLink>
-      </Link>
+      <Link {...args} css={{ mr: 2 }} render={<NavLink to="/foo">Link to current route</NavLink>} />
+      <Link {...args} render={<NavLink to="/fuf">Link to another route</NavLink>} />
     </>
   ),
   decorators: [withRouter],

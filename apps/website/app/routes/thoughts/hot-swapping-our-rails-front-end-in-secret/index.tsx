@@ -55,22 +55,22 @@ export default function Index() {
             allowFullScreen
           />
         </div>
-        <Link asChild>
-          <ReactRouterLink to="transcript">Full transcript</ReactRouterLink>
-        </Link>
+        <Link render={<ReactRouterLink to="transcript">Full transcript</ReactRouterLink>} />
       </section>
       <section className={css({ vr: true })}>
         <Heading as="h3" variant="heading">
           Slides
         </Heading>
-        <Link asChild>
-          <ReactRouterLink to="slides" {...externalLinkProps}>
-            <img
-              alt="Title slide for the RailsConf 2018 presentation Chris gave called Hot Swapping Our Rails Front End in Secret"
-              src="https://get.chrislopresto.com/betterment-rebranding-bonanza/0000.png"
-            />
-          </ReactRouterLink>
-        </Link>
+        <Link
+          render={
+            <ReactRouterLink to="slides" {...externalLinkProps}>
+              <img
+                alt="Title slide for the RailsConf 2018 presentation Chris gave called Hot Swapping Our Rails Front End in Secret"
+                src="https://get.chrislopresto.com/betterment-rebranding-bonanza/0000.png"
+              />
+            </ReactRouterLink>
+          }
+        />
       </section>
     </div>
   );
