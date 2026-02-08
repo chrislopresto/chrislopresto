@@ -1,4 +1,4 @@
-import { COLOR_SCHEME_KEY, useColorScheme } from './styles/color-scheme';
+import { COLOR_MODE_KEY, useColorMode } from './styles/color-mode';
 import { css } from '../styled-system/css';
 
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
@@ -11,7 +11,7 @@ import { Provider } from 'jotai';
 export const links: Route.LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
 
 function App() {
-  const { colorScheme } = useColorScheme();
+  const { colorScheme } = useColorMode();
   return (
     <html lang="en" data-color-mode={colorScheme}>
       <head>
@@ -25,7 +25,7 @@ function App() {
               if (typeof window !== 'undefined') {
                 const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 const preferredColorScheme = colorSchemeMediaQuery.matches ? 'dark' : 'light';
-                const storedColorScheme = JSON.parse(localStorage.getItem('${COLOR_SCHEME_KEY}') || '""');
+                const storedColorScheme = JSON.parse(localStorage.getItem('${COLOR_MODE_KEY}') || '""');
                 const resolvedColorScheme = storedColorScheme || preferredColorScheme;
 
                 document.documentElement.setAttribute('data-color-mode', resolvedColorScheme);
