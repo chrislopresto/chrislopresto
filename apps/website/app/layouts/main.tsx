@@ -9,11 +9,13 @@ import {
   RiMoonLine,
   RiRefreshLine,
 } from '@remixicon/react';
-import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { useColorMode } from '../styles/color-mode';
 import { Nav } from '../components/nav/nav';
 import { NavLink, Outlet } from 'react-router';
 import { NameLede } from '../components/name-lede/name-lede';
+import { VisuallyHidden } from '../components/visually-hidden/visually-hidden';
+import { Toggle } from '@base-ui/react/toggle';
+import { ToggleGroup } from '@base-ui/react/toggle-group';
 
 export const meta: MetaFunction = () => {
   return [
@@ -25,7 +27,13 @@ export const meta: MetaFunction = () => {
 const ICON_SIZE = 16;
 
 function Footer() {
-  const { setLight, setDark, matchSystem } = useColorMode();
+  const { setLight, setDark, matchSystem, colorMode } = useColorMode();
+  const updateColorMode = (groupValue: Array<'light' | 'dark' | 'system'>) => {
+    const value = groupValue[0];
+    if (value === 'light') setLight();
+    if (value === 'dark') setDark();
+    if (value === 'system') matchSystem();
+  };
 
   return (
     <>
@@ -37,48 +45,35 @@ function Footer() {
 
         <div className={css({ vr: true })}>
           <a href="https://twitter.com/chrislopresto" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
-            <AccessibleIcon label="Twitter X">
-              <RiTwitterXFill size={ICON_SIZE} className={css({ mr: '1' })} />
-            </AccessibleIcon>
+            <RiTwitterXFill size={ICON_SIZE} className={css({ mr: '1' })} />
+            <VisuallyHidden>Twitter X</VisuallyHidden>
             @chrislopresto
           </a>
           <a href="https://github.com/chrislopresto/" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
-            <AccessibleIcon label="GitHub">
-              <RiGithubFill size={ICON_SIZE} className={css({ mr: '1' })} />
-            </AccessibleIcon>
+            <RiGithubFill size={ICON_SIZE} className={css({ mr: '1' })} />
+            <VisuallyHidden>GitHub</VisuallyHidden>
             @chrislopresto
           </a>
           <a
             href="https://www.linkedin.com/in/chrislopresto/"
             className={css({ display: 'flex', mb: '1', textStyle: 'body' })}
           >
-            <AccessibleIcon label="LinkedIn">
-              <RiLinkedinBoxFill size={ICON_SIZE} className={css({ mr: '1' })} />
-            </AccessibleIcon>
+            <RiLinkedinBoxFill size={ICON_SIZE} className={css({ mr: '1' })} />
+            <VisuallyHidden>LinkedIn</VisuallyHidden>
             chrislopresto
           </a>
         </div>
-        <AccessibleIcon label="Light theme">
-          <RiSunLine
-            size={ICON_SIZE}
-            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
-            onClick={() => setLight()}
-          />
-        </AccessibleIcon>
-        <AccessibleIcon label="Dark theme">
-          <RiMoonLine
-            size={ICON_SIZE}
-            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
-            onClick={() => setDark()}
-          />
-        </AccessibleIcon>
-        <AccessibleIcon label="Match system">
-          <RiRefreshLine
-            size={ICON_SIZE}
-            className={css({ cursor: 'pointer', mr: '1', display: 'inline' })}
-            onClick={() => matchSystem()}
-          />
-        </AccessibleIcon>
+        <ToggleGroup value={[colorMode]} onValueChange={updateColorMode}>
+          <Toggle aria-label="Light mode" value="light">
+            <RiSunLine size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
+          </Toggle>
+          <Toggle aria-label="Dark mode" value="dark">
+            <RiMoonLine size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
+          </Toggle>
+          <Toggle aria-label="Match system color mode" value="system">
+            <RiRefreshLine size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
+          </Toggle>
+        </ToggleGroup>
       </section>
     </>
   );

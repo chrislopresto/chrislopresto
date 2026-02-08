@@ -23,9 +23,6 @@ importers:
       '@base-ui/react':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@radix-ui/react-accessible-icon':
-        specifier: ^1.1.8
-        version: 1.1.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-router/cloudflare':
         specifier: ^7.13.0
         version: 7.13.0(@cloudflare/workers-types@4.20260207.0)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
@@ -1488,63 +1485,6 @@ packages:
 
   '@poppinss/exception@1.2.3':
     resolution: {integrity: sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw==}
-
-  '@radix-ui/react-accessible-icon@1.1.8':
-    resolution: {integrity: sha512-1k/SvTk5yW2x0eqepOxVjZyG8GBuYyj7z4/R5c9FYox7zb6vV08fNj6Wwv+TsHWZfPUd0tMlzM/6OguZO7F1eQ==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-
-  '@radix-ui/react-compose-refs@1.1.2':
-    resolution: {integrity: sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@radix-ui/react-primitive@2.1.4':
-    resolution: {integrity: sha512-9hQc4+GNVtJAIEPEqlYqW5RiYdrr8ea5XQ0ZOnD6fgru+83kqT15mq2OCcbe8KnjRZl5vF3ks69AKz3kh1jrhg==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-
-  '@radix-ui/react-slot@1.2.4':
-    resolution: {integrity: sha512-Jl+bCv8HxKnlTLVrcDE8zTMJ09R9/ukw4qBs/oZClOfoQk/cOTbDn+NceXfV7j09YPVQUryJPHurafcSg6EVKA==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@radix-ui/react-visually-hidden@1.2.4':
-    resolution: {integrity: sha512-kaeiyGCe844dkb9AVF+rb4yTyb1LiLN/e3es3nLiRyN4dC8AduBYPMnnNlDjX2VDOcvDEiPnRNMJeWCfsX0txg==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
 
   '@react-router/cloudflare@7.13.0':
     resolution: {integrity: sha512-8K7gftcmFYe2kjx6RBWgJxqBgO9JplKZH3NzVSZsHXw/MwLVeHQWwIZJqm/mixEYLCV3DJVl2qfAGV4gIinFdA==}
@@ -6394,46 +6334,6 @@ snapshots:
       supports-color: 10.2.2
 
   '@poppinss/exception@1.2.3': {}
-
-  '@radix-ui/react-accessible-icon@1.1.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
-    dependencies:
-      '@radix-ui/react-visually-hidden': 1.2.4(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
-    optionalDependencies:
-      '@types/react': 19.2.13
-      '@types/react-dom': 19.2.3(@types/react@19.2.13)
-
-  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.2.13)(react@19.2.4)':
-    dependencies:
-      react: 19.2.4
-    optionalDependencies:
-      '@types/react': 19.2.13
-
-  '@radix-ui/react-primitive@2.1.4(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
-    dependencies:
-      '@radix-ui/react-slot': 1.2.4(@types/react@19.2.13)(react@19.2.4)
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
-    optionalDependencies:
-      '@types/react': 19.2.13
-      '@types/react-dom': 19.2.3(@types/react@19.2.13)
-
-  '@radix-ui/react-slot@1.2.4(@types/react@19.2.13)(react@19.2.4)':
-    dependencies:
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.13)(react@19.2.4)
-      react: 19.2.4
-    optionalDependencies:
-      '@types/react': 19.2.13
-
-  '@radix-ui/react-visually-hidden@1.2.4(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
-    dependencies:
-      '@radix-ui/react-primitive': 2.1.4(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
-    optionalDependencies:
-      '@types/react': 19.2.13
-      '@types/react-dom': 19.2.3(@types/react@19.2.13)
 
   '@react-router/cloudflare@7.13.0(@cloudflare/workers-types@4.20260207.0)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)':
     dependencies:
