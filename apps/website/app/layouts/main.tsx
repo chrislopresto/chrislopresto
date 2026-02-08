@@ -5,7 +5,9 @@ import {
   RiGithubFill,
   RiLinkedinBoxFill,
   RiTwitterXFill,
+  RiSunFill,
   RiSunLine,
+  RiMoonFill,
   RiMoonLine,
   RiRefreshLine,
 } from '@remixicon/react';
@@ -64,12 +66,30 @@ function Footer() {
           </a>
         </div>
         <ToggleGroup value={[colorMode]} onValueChange={updateColorMode}>
-          <Toggle aria-label="Light mode" value="light">
-            <RiSunLine size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
-          </Toggle>
-          <Toggle aria-label="Dark mode" value="dark">
-            <RiMoonLine size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
-          </Toggle>
+          <Toggle
+            aria-label="Light mode"
+            value="light"
+            render={(props, state) => {
+              const Icon = state.pressed ? RiSunFill : RiSunLine;
+              return (
+                <button {...props}>
+                  <Icon size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
+                </button>
+              );
+            }}
+          />
+          <Toggle
+            aria-label="Dark mode"
+            value="dark"
+            render={(props, state) => {
+              const Icon = state.pressed ? RiMoonFill : RiMoonLine;
+              return (
+                <button {...props}>
+                  <Icon size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
+                </button>
+              );
+            }}
+          />
           <Toggle aria-label="Match system color mode" value="system">
             <RiRefreshLine size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
           </Toggle>
