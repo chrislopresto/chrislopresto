@@ -1,12 +1,19 @@
+config.define_string("session", args=False, usage="Session number (0, 1, 2, ...) to offset ports and avoid collisions")
+cfg = config.parse()
+session = int(cfg.get("session", "0"))
+
+storybook_port = 6006 + session
+dev_port = 5173 + session
+
 local_resource(
   'storybook',
-  serve_cmd='pnpm storybook',
-  links=['http://localhost:6006'],
+  serve_cmd='pnpm storybook -p %d' % storybook_port,
+  links=['http://localhost:%d' % storybook_port],
 )
 local_resource(
   'dev-server',
-  serve_cmd='pnpm dev',
-  links=['http://localhost:5173'],
+  serve_cmd='pnpm dev --port %d' % dev_port,
+  links=['http://localhost:%d' % dev_port],
 )
 local_resource(
   'vitest',
