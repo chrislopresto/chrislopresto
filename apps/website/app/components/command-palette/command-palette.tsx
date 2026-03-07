@@ -90,7 +90,19 @@ export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
 
   return (
     <Command.Dialog open={open} onOpenChange={setOpen} label="Command palette">
-      <div className={overlayStyle} cmdk-overlay="" onClick={() => setOpen(false)} />
+      <div
+        className={overlayStyle}
+        cmdk-overlay=""
+        role="button"
+        tabIndex={-1}
+        aria-label="Close command palette"
+        onClick={() => setOpen(false)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            setOpen(false);
+          }
+        }}
+      />
       <div className={contentStyle}>
         <Command.Input className={inputStyle} placeholder="Type a command or search..." />
         <Command.List className={listStyle}>
