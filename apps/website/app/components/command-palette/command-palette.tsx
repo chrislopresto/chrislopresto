@@ -110,8 +110,12 @@ const itemStyle = css({
   },
 });
 
-export function CommandPalette() {
-  const [open, setOpen] = useState(false);
+type CommandPaletteProps = {
+  defaultOpen?: boolean;
+};
+
+export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
+  const [open, setOpen] = useState(defaultOpen);
   const navigate = useNavigate();
 
   useEffect(() => {
