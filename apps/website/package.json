@@ -15,7 +15,7 @@
     "nuke": "rm -rf .wrangler .cache node_modules/.cache",
     "typegen": "wrangler types",
     "typecheck": "react-router typegen && tsc --build --noEmit",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev",
     "storybook:build": "storybook build -o ./public/storybook ; touch ./public/storybook/.gitkeep",
     "chromatic:build-storybook": "storybook build --webpack-stats-json",
     "cloudflare:build": "echo hello ; pwd ; mkdir -p ./build/client ; mkdir -p ./build/server ; ls build/client ; ls build/server; echo done; pnpm run build && pnpm run storybook:build && cp -r ./public/storybook ./build/client/"
