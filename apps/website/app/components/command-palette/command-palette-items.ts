@@ -4,6 +4,7 @@ import {
   RiChat1Line,
   RiPresentationLine,
   RiFileTextLine,
+  RiBookOpenLine,
   RiTwitterXFill,
   RiGithubFill,
   RiLinkedinBoxFill,
@@ -13,6 +14,7 @@ export type PageItem = {
   path: string;
   icon: typeof RiHomeLine;
   keywords?: string[];
+  external?: boolean;
 };
 
 export type SocialItem = {
@@ -45,6 +47,13 @@ export const pages: PageItem[] = [
     label: 'Living Style Guide Driven Development — Transcript',
     path: href('/thoughts/living-style-guide-driven-development/transcript'),
     icon: RiFileTextLine,
+  },
+  {
+    label: 'Storybook',
+    path: '/storybook',
+    icon: RiBookOpenLine,
+    keywords: ['components', 'design system'],
+    external: true,
   },
 ];
 

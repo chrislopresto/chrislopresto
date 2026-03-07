@@ -116,7 +116,11 @@ export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
                 className={itemStyle}
                 keywords={page.keywords}
                 onSelect={() => {
-                  navigate(page.path);
+                  if (page.external) {
+                    window.open(page.path, '_blank');
+                  } else {
+                    navigate(page.path);
+                  }
                   setOpen(false);
                 }}
               >
