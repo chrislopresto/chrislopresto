@@ -1,6 +1,7 @@
 import { href } from 'react-router';
 import {
   RiHomeLine,
+  RiHeart2Line,
   RiChat1Line,
   RiPresentationLine,
   RiFileTextLine,
@@ -25,6 +26,7 @@ export type SocialItem = {
 
 export const pages: PageItem[] = [
   { label: 'Home', path: href('/'), icon: RiHomeLine },
+  { label: 'Things', path: href('/things'), icon: RiHeart2Line, keywords: ['appreciate', 'favorites'] },
   { label: 'Thoughts', path: href('/thoughts'), icon: RiChat1Line },
   {
     label: 'Hot Swapping Our Rails Front End in Secret',

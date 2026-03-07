@@ -31,6 +31,22 @@ export function Nav({ css: cssProp = {} }: NavProps) {
       <Link
         render={
           <NavLink
+            to="/things"
+            className={css({
+              textDecoration: 'none',
+              textUnderlineOffset: '14px',
+              _hover: { textDecoration: 'underline' },
+              _active: { textDecoration: 'underline' },
+              _focus: { textDecoration: 'underline' },
+            })}
+          >
+            Things
+          </NavLink>
+        }
+      />
+      <Link
+        render={
+          <NavLink
             to="/thoughts"
             className={css({
               textDecoration: 'none',
