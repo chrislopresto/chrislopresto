@@ -13,6 +13,7 @@ import {
 } from '@remixicon/react';
 import { useColorMode } from '../styles/color-mode';
 import { Nav } from '../components/nav/nav';
+import { CommandPalette } from '../components/command-palette/command-palette';
 import { NavLink, Outlet } from 'react-router';
 import { NameLede } from '../components/name-lede/name-lede';
 import { VisuallyHidden } from '../components/visually-hidden/visually-hidden';
@@ -102,6 +103,7 @@ function Footer() {
 export function Main() {
   return (
     <>
+      <CommandPalette />
       <section
         className={css({
           zIndex: '1',
