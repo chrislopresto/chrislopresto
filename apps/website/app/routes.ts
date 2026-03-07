@@ -3,6 +3,7 @@ import { type RouteConfig, route, index, layout } from '@react-router/dev/routes
 export default [
   layout('./layouts/main.tsx', [
     index('./routes/home.tsx'),
+    route('/things', './routes/things.tsx'),
     route('/thoughts', './routes/thoughts.tsx'),
     route(
       '/thoughts/hot-swapping-our-rails-front-end-in-secret',
