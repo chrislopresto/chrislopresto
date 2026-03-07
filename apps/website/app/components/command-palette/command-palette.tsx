@@ -2,50 +2,9 @@ import { useEffect, useState } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router';
 import { css } from '../../../styled-system/css';
-import {
-  RiHomeLine,
-  RiChat1Line,
-  RiPresentationLine,
-  RiFileTextLine,
-  RiTwitterXFill,
-  RiGithubFill,
-  RiLinkedinBoxFill,
-} from '@remixicon/react';
+import { pages, socials } from './command-palette-items';
 
 const ICON_SIZE = 16;
-
-const pages = [
-  { label: 'Home', path: '/', icon: RiHomeLine },
-  { label: 'Thoughts', path: '/thoughts', icon: RiChat1Line },
-  {
-    label: 'Hot Swapping Our Rails Front End in Secret',
-    path: '/thoughts/hot-swapping-our-rails-front-end-in-secret',
-    icon: RiPresentationLine,
-    keywords: ['railsconf', 'betterment'],
-  },
-  {
-    label: 'Hot Swapping Our Rails Front End in Secret — Transcript',
-    path: '/thoughts/hot-swapping-our-rails-front-end-in-secret/transcript',
-    icon: RiFileTextLine,
-  },
-  {
-    label: 'Living Style Guide Driven Development',
-    path: '/thoughts/living-style-guide-driven-development',
-    icon: RiPresentationLine,
-    keywords: ['emberconf', 'ember'],
-  },
-  {
-    label: 'Living Style Guide Driven Development — Transcript',
-    path: '/thoughts/living-style-guide-driven-development/transcript',
-    icon: RiFileTextLine,
-  },
-] as const;
-
-const socials = [
-  { label: 'Twitter / X', url: 'https://twitter.com/chrislopresto', icon: RiTwitterXFill },
-  { label: 'GitHub', url: 'https://github.com/chrislopresto', icon: RiGithubFill },
-  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/chrislopresto', icon: RiLinkedinBoxFill },
-] as const;
 
 const overlayStyle = css({
   position: 'fixed',
@@ -143,7 +102,7 @@ export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
               <Command.Item
                 key={page.path}
                 className={itemStyle}
-                keywords={'keywords' in page ? [...page.keywords] : undefined}
+                keywords={page.keywords}
                 onSelect={() => {
                   navigate(page.path);
                   setOpen(false);
