@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Command } from 'cmdk';
 import { useNavigate } from 'react-router';
 import { css } from '../../../styled-system/css';
-import { pages, socials } from './command-palette-items';
+import { pages, socials, colorModes } from './command-palette-items';
+import { useColorMode } from '../../styles/color-mode';
 
 const ICON_SIZE = 16;
 
@@ -76,6 +77,7 @@ type CommandPaletteProps = {
 export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
   const [open, setOpen] = useState(defaultOpen);
   const navigate = useNavigate();
+  const { setLight, setDark, matchSystem } = useColorMode();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -126,6 +128,24 @@ export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
               >
                 <page.icon size={ICON_SIZE} />
                 {page.label}
+              </Command.Item>
+            ))}
+          </Command.Group>
+          <Command.Group heading="Color Mode">
+            {colorModes.map((mode) => (
+              <Command.Item
+                key={mode.value}
+                className={itemStyle}
+                keywords={mode.keywords}
+                onSelect={() => {
+                  if (mode.value === 'light') setLight();
+                  if (mode.value === 'dark') setDark();
+                  if (mode.value === 'system') matchSystem();
+                  setOpen(false);
+                }}
+              >
+                <mode.icon size={ICON_SIZE} />
+                {mode.label}
               </Command.Item>
             ))}
           </Command.Group>
