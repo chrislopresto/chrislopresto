@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router';
-import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { Drawer } from '@base-ui/react/drawer';
 import { RiMenuLine, RiCloseLine } from '@remixicon/react';
 import { css } from '../../../styled-system/css';
 import type { SystemStyleObject } from '../../../styled-system/types';
