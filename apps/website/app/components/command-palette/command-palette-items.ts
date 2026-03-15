@@ -4,7 +4,6 @@ import {
   RiHeart2Line,
   RiChat1Line,
   RiPresentationLine,
-  RiFileTextLine,
   RiBookOpenLine,
   RiTwitterXFill,
   RiGithubFill,
@@ -38,20 +37,10 @@ export const pages: PageItem[] = [
     keywords: ['railsconf', 'betterment'],
   },
   {
-    label: 'Hot Swapping Our Rails Front End in Secret — Transcript',
-    path: href('/thoughts/hot-swapping-our-rails-front-end-in-secret/transcript'),
-    icon: RiFileTextLine,
-  },
-  {
     label: 'Living Style Guide Driven Development',
     path: href('/thoughts/living-style-guide-driven-development'),
     icon: RiPresentationLine,
     keywords: ['emberconf', 'ember'],
-  },
-  {
-    label: 'Living Style Guide Driven Development — Transcript',
-    path: href('/thoughts/living-style-guide-driven-development/transcript'),
-    icon: RiFileTextLine,
   },
   {
     label: 'Storybook',

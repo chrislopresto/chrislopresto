@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import type { MetaFunction } from 'react-router';
 import { Signature } from '../components/signature/signature';
 import { css } from '../../styled-system/css';
@@ -13,6 +14,7 @@ import {
 } from '@remixicon/react';
 import { useColorMode } from '../styles/color-mode';
 import { Nav } from '../components/nav/nav';
+const MobileNav = lazy(() => import('../components/nav/mobile-nav').then((m) => ({ default: m.MobileNav })));
 import { CommandPalette } from '../components/command-palette/command-palette';
 import { NavLink, Outlet } from 'react-router';
 import { NameLede } from '../components/name-lede/name-lede';
@@ -113,11 +115,21 @@ export function Main() {
           p: '2',
         })}
       >
-        <div className={css({ display: 'flex', gap: '8', alignItems: 'center' })}>
+        <div
+          className={css({
+            display: 'flex',
+            gap: '8',
+            alignItems: 'center',
+            justifyContent: { base: 'space-between', md: 'flex-start' },
+          })}
+        >
           <NavLink to="/">
             <NameLede css={{ display: 'inline' }} />
           </NavLink>
-          <Nav css={{ display: 'inline-flex' }} />
+          <Nav css={{ display: { base: 'none', md: 'inline-flex' } }} />
+          <Suspense>
+            <MobileNav css={{ display: { base: 'inline-flex', md: 'none' } }} />
+          </Suspense>
         </div>
       </section>
       <section className={css({ px: '2' })}></section>
