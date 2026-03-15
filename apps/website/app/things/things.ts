@@ -15,7 +15,7 @@ import nytCrossword from '../images/things/nyt-crossword.svg';
 
 export type Thing = {
   name: string;
-  description: string;
+  description: string | (() => string);
   image: string;
   link?: string;
 };
@@ -101,7 +101,12 @@ export const things: Thing[] = [
   },
   {
     name: 'New York Times Crossword',
-    description: 'Daily ritual.',
+    description: () => {
+      const start = new Date(2020, 0, 20);
+      const now = new Date();
+      const days = Math.floor((now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+      return `Current streak: ${days.toLocaleString()} days`;
+    },
     image: nytCrossword,
     link: 'https://www.nytimes.com/crosswords',
   },

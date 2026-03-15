@@ -40,7 +40,9 @@ export default function Things() {
                 <Heading variant="subheading" as="h2" css={{ mb: '0.5' }}>
                   {thing.name}
                 </Heading>
-                <p className={css({ textStyle: 'body' })}>{thing.description}</p>
+                <p className={css({ textStyle: 'body' })}>
+                  {typeof thing.description === 'function' ? thing.description() : thing.description}
+                </p>
                 {thing.link && (
                   <a
                     href={thing.link}
