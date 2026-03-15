@@ -9,6 +9,9 @@ import {
   RiTwitterXFill,
   RiGithubFill,
   RiLinkedinBoxFill,
+  RiSunLine,
+  RiMoonLine,
+  RiRefreshLine,
 } from '@remixicon/react';
 export type PageItem = {
   label: string;
@@ -57,6 +60,21 @@ export const pages: PageItem[] = [
     keywords: ['components', 'design system'],
     external: true,
   },
+];
+
+export type ColorModeValue = 'light' | 'dark' | 'system';
+
+export type ColorModeItem = {
+  label: string;
+  value: ColorModeValue;
+  icon: typeof RiHomeLine;
+  keywords?: string[];
+};
+
+export const colorModes: ColorModeItem[] = [
+  { label: 'Light', value: 'light', icon: RiSunLine, keywords: ['theme', 'color', 'mode'] },
+  { label: 'Dark', value: 'dark', icon: RiMoonLine, keywords: ['theme', 'color', 'mode'] },
+  { label: 'System', value: 'system', icon: RiRefreshLine, keywords: ['theme', 'color', 'mode', 'match', 'auto'] },
 ];
 
 export const socials: SocialItem[] = [
