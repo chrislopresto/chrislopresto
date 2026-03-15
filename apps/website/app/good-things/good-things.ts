@@ -1,17 +1,17 @@
-import nomosAhoiNeomatikSirenBlue from '../images/things/nomos-ahoi-neomatik-siren-blue.webp';
-import elYucatecoGreenChileHabanero from '../images/things/el-yucateco-green-chile-habanero.png';
-import lochbyPocketNotebook from '../images/things/lochby-pocket-notebook.png';
-import shigeruKawaiSk3 from '../images/things/shigeru-kawai-sk-3.jpg';
-import adidasSambaOg from '../images/things/adidas-samba-og.jpg';
-import withnailAndI from '../images/things/withnail-and-i.jpg';
-import newYorkMets from '../images/things/new-york-mets.svg';
-import tactileTurnSlimSwitchPen from '../images/things/tactile-turn-slim-switch-pen.jpg';
-import breitlingSuperocean from '../images/things/breitling-superocean.webp';
-import trakkeBannochPro from '../images/things/trakke-bannoch-pro.jpg';
-import depechemode from '../images/things/depeche-mode.jpg';
-import montyPython from '../images/things/monty-python.png';
-import obsidian from '../images/things/obsidian.svg';
-import nytCrossword from '../images/things/nyt-crossword.svg';
+import nomosAhoiNeomatikSirenBlue from '../images/good-things/nomos-ahoi-neomatik-siren-blue.webp';
+import elYucatecoGreenChileHabanero from '../images/good-things/el-yucateco-green-chile-habanero.png';
+import lochbyPocketNotebook from '../images/good-things/lochby-pocket-notebook.png';
+import shigeruKawaiSk3 from '../images/good-things/shigeru-kawai-sk-3.jpg';
+import adidasSambaOg from '../images/good-things/adidas-samba-og.jpg';
+import withnailAndI from '../images/good-things/withnail-and-i.jpg';
+import newYorkMets from '../images/good-things/new-york-mets.svg';
+import tactileTurnSlimSwitchPen from '../images/good-things/tactile-turn-slim-switch-pen.jpg';
+import breitlingSuperocean from '../images/good-things/breitling-superocean.webp';
+import trakkeBannochPro from '../images/good-things/trakke-bannoch-pro.jpg';
+import depechemode from '../images/good-things/depeche-mode.jpg';
+import montyPython from '../images/good-things/monty-python.png';
+import obsidian from '../images/good-things/obsidian.svg';
+import nytCrossword from '../images/good-things/nyt-crossword.svg';
 
 export type Thing = {
   name: string;

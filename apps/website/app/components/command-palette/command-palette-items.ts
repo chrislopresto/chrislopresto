@@ -29,7 +29,7 @@ export type SocialItem = {
 
 export const pages: PageItem[] = [
   { label: 'Home', path: href('/'), icon: RiHomeLine },
-  { label: 'Things', path: href('/things'), icon: RiHeart2Line, keywords: ['appreciate', 'favorites'] },
+  { label: 'Good Things', path: href('/good-things'), icon: RiHeart2Line, keywords: ['appreciate', 'favorites'] },
   { label: 'Thoughts', path: href('/thoughts'), icon: RiChat1Line },
   {
     label: 'Hot Swapping Our Rails Front End in Secret',
