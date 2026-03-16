@@ -35,7 +35,7 @@
     "session-context": "^0.0.6"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260313.1",
+    "@cloudflare/workers-types": "^4.20260316.1",
     "@eslint/js": "^10.0.1",
     "@mdx-js/rollup": "^3.1.1",
     "@pandacss/dev": "^1.9.0",
