@@ -34,8 +34,6 @@ const popupStyle = css({
   bottom: 0,
   width: { base: '100vw', sm: '300px' },
   bg: 'background',
-  borderLeft: '1px solid',
-  borderColor: 'border',
   zIndex: 101,
   overflowY: 'auto',
 });
@@ -138,7 +136,7 @@ export function MobileNav({ css: cssProp = {}, defaultOpen = false }: MobileNavP
           <Drawer.Backdrop className={backdropStyle} />
           <Drawer.Popup className={popupStyle}>
             <div className={headerStyle}>
-              <NameLede css={{ display: 'inline', top: '-0.5px', left: '-1px', position: 'relative' }} />
+              <NameLede css={{ display: 'inline', top: '-0.5px', position: 'relative' }} />
               <Drawer.Close className={triggerStyle} aria-label="Close navigation menu">
                 <RiCloseLine size={24} />
               </Drawer.Close>
