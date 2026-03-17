@@ -104,7 +104,7 @@ function Footer() {
 
 export function Main() {
   return (
-    <>
+    <div className={css({ display: 'flex', flexDirection: 'column', minHeight: '100dvh' })}>
       <CommandPalette />
       <section
         className={css({
@@ -133,13 +133,13 @@ export function Main() {
         </div>
       </section>
       <section className={css({ px: '2' })}></section>
-      <section className={css({ p: '2' })}>
+      <section className={css({ p: '2', flex: '1' })}>
         <Outlet />
       </section>
-      <section className={css({ p: '2' })}>
+      <section className={css({ p: '2', mt: 'auto' })}>
         <Footer />
       </section>
-    </>
+    </div>
   );
 }
 
