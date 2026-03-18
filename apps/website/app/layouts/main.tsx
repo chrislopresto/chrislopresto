@@ -173,6 +173,8 @@ export function Main() {
             gap: '8',
             alignItems: 'center',
             justifyContent: { base: 'space-between', md: 'flex-start' },
+            maxWidth: '1000px',
+            mx: 'auto',
           })}
         >
           <NavLink to="/">
@@ -185,7 +187,7 @@ export function Main() {
         </div>
       </section>
       <section className={css({ px: '2' })}></section>
-      <section className={css({ p: '2', flex: '1' })}>
+      <section className={css({ p: '2', flex: '1', maxWidth: '1000px', mx: 'auto', width: '100%' })}>
         <Outlet />
       </section>
       <section
@@ -198,7 +200,7 @@ export function Main() {
           p: '4',
         })}
       >
-        <div className={css({ maxWidth: '1000px' })}>
+        <div className={css({ maxWidth: '1000px', mx: 'auto' })}>
           <Footer />
         </div>
       </section>

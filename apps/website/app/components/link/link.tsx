@@ -7,7 +7,8 @@ type LinkProps = useRender.ComponentProps<'a'> & {
   css?: SystemStyleObject;
 };
 
-const activeCss = css.raw({
+export const activeCss = css.raw({
+  textDecoration: 'underline',
   _light: {
     textShadow: '1px 1px 3px token(colors.accent/50)',
   },
@@ -21,9 +22,6 @@ const activeCss = css.raw({
 export const linkCss = css.raw({
   '&.active': { fontWeight: 'bold', textShadow: '2px 2px 0px token(colors.accentSecondary)' },
   color: 'link',
-  textDecoration: 'underline',
-  textUnderlineOffset: '2px',
-  textDecorationStyle: 'dotted',
   _hover: activeCss,
   _active: activeCss,
   _focus: {
