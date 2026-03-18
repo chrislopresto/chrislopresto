@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Command } from 'cmdk';
-import { useNavigate } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import { css } from '../../../styled-system/css';
 import { pages, socials, colorModes } from './command-palette-items';
 import { useColorMode } from '../../styles/color-mode';
@@ -70,6 +70,22 @@ const itemStyle = css({
   },
 });
 
+const activeItemStyle = css({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '2',
+  px: '2',
+  py: '2',
+  borderRadius: 'md',
+  cursor: 'pointer',
+  textStyle: 'body',
+  color: 'default',
+  fontWeight: 'bold',
+  '&[data-selected=true]': {
+    bg: 'backgroundSecondary',
+  },
+});
+
 type CommandPaletteProps = {
   defaultOpen?: boolean;
 };
@@ -77,7 +93,8 @@ type CommandPaletteProps = {
 export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
   const [open, setOpen] = useState(defaultOpen);
   const navigate = useNavigate();
-  const { setLight, setDark, matchSystem } = useColorMode();
+  const { setLight, setDark, matchSystem, colorMode } = useColorMode();
+  const location = useLocation();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -112,42 +129,49 @@ export function CommandPalette({ defaultOpen = false }: CommandPaletteProps) {
             No results found.
           </Command.Empty>
           <Command.Group heading="Pages">
-            {pages.map((page) => (
-              <Command.Item
-                key={page.path}
-                className={itemStyle}
-                keywords={page.keywords}
-                onSelect={() => {
-                  if (page.external) {
-                    window.open(page.path, '_blank');
-                  } else {
-                    navigate(page.path);
-                  }
-                  setOpen(false);
-                }}
-              >
-                <page.icon size={ICON_SIZE} />
-                {page.label}
-              </Command.Item>
-            ))}
+            {pages.map((page) => {
+              const isActive = !page.external && location.pathname === page.path;
+              return (
+                <Command.Item
+                  key={page.path}
+                  className={isActive ? activeItemStyle : itemStyle}
+                  keywords={page.keywords}
+                  onSelect={() => {
+                    if (page.external) {
+                      window.open(page.path, '_blank');
+                    } else {
+                      navigate(page.path);
+                    }
+                    setOpen(false);
+                  }}
+                >
+                  <page.icon size={ICON_SIZE} />
+                  {page.label}
+                </Command.Item>
+              );
+            })}
           </Command.Group>
           <Command.Group heading="Color Mode">
-            {colorModes.map((mode) => (
-              <Command.Item
-                key={mode.value}
-                className={itemStyle}
-                keywords={mode.keywords}
-                onSelect={() => {
-                  if (mode.value === 'light') setLight();
-                  if (mode.value === 'dark') setDark();
-                  if (mode.value === 'system') matchSystem();
-                  setOpen(false);
-                }}
-              >
-                <mode.icon size={ICON_SIZE} />
-                {mode.label}
-              </Command.Item>
-            ))}
+            {colorModes.map((mode) => {
+              const isActive = mode.value === colorMode;
+              const Icon = isActive ? mode.activeIcon : mode.icon;
+              return (
+                <Command.Item
+                  key={mode.value}
+                  className={isActive ? activeItemStyle : itemStyle}
+                  keywords={mode.keywords}
+                  onSelect={() => {
+                    if (mode.value === 'light') setLight();
+                    if (mode.value === 'dark') setDark();
+                    if (mode.value === 'system') matchSystem();
+                    setOpen(false);
+                  }}
+                >
+                  <Icon size={ICON_SIZE} />
+                  {mode.label}
+                </Command.Item>
+              );
+            })}
           </Command.Group>
           <Command.Group heading="Social">
             {socials.map((social) => (

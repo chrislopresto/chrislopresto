@@ -38,6 +38,7 @@ const tabListCss = css({
 
 const tabTriggerCss = css({
   textStyle: 'subheading',
+  textTransform: 'uppercase',
   px: '4',
   py: '2',
   cursor: 'pointer',
@@ -74,7 +75,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
         }
         return next;
       },
-      { replace: false },
+      { replace: false, preventScrollReset: true },
     );
   }
 
