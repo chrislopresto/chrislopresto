@@ -41,42 +41,68 @@ function Footer() {
   };
 
   return (
-    <>
-      <div className={css({ vr: true })}></div>
-      <section>
-        <div className={css({ vr: true })}>
-          <Signature variant="hyper" />
-        </div>
+    <div
+      className={css({
+        display: 'grid',
+        gridTemplateColumns: { base: '1fr', md: '1fr 1fr 1fr' },
+        gap: '4',
+        rowGap: { base: '8', md: '4' },
+      })}
+    >
+      <div>
+        <p className={css({ vr: true })}>Thanks for swinging by.</p>
+        <Signature variant="hyper" />
+      </div>
 
-        <div className={css({ vr: true })}>
-          <a href="https://twitter.com/chrislopresto" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
-            <RiTwitterXFill size={ICON_SIZE} className={css({ mr: '1' })} />
-            <VisuallyHidden>Twitter X</VisuallyHidden>
-            @chrislopresto
-          </a>
-          <a href="https://github.com/chrislopresto/" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
-            <RiGithubFill size={ICON_SIZE} className={css({ mr: '1' })} />
-            <VisuallyHidden>GitHub</VisuallyHidden>
-            @chrislopresto
-          </a>
-          <a
-            href="https://www.linkedin.com/in/chrislopresto/"
-            className={css({ display: 'flex', mb: '1', textStyle: 'body' })}
-          >
-            <RiLinkedinBoxFill size={ICON_SIZE} className={css({ mr: '1' })} />
-            <VisuallyHidden>LinkedIn</VisuallyHidden>
-            chrislopresto
-          </a>
-        </div>
-        <ToggleGroup value={[colorMode]} onValueChange={updateColorMode}>
+      <div>
+        <p className={css({ mb: '1', textStyle: 'subheading', textTransform: 'uppercase', opacity: 0.6 })}>Social</p>
+        <a href="https://twitter.com/chrislopresto" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
+          <RiTwitterXFill size={ICON_SIZE} className={css({ mr: '1' })} />
+          <VisuallyHidden>Twitter X</VisuallyHidden>
+          @chrislopresto
+        </a>
+        <a href="https://github.com/chrislopresto/" className={css({ display: 'flex', mb: '1', textStyle: 'body' })}>
+          <RiGithubFill size={ICON_SIZE} className={css({ mr: '1' })} />
+          <VisuallyHidden>GitHub</VisuallyHidden>
+          @chrislopresto
+        </a>
+        <a
+          href="https://www.linkedin.com/in/chrislopresto/"
+          className={css({ display: 'flex', mb: '1', textStyle: 'body' })}
+        >
+          <RiLinkedinBoxFill size={ICON_SIZE} className={css({ mr: '1' })} />
+          <VisuallyHidden>LinkedIn</VisuallyHidden>
+          chrislopresto
+        </a>
+      </div>
+
+      <div>
+        <p className={css({ mb: '1', textStyle: 'subheading', textTransform: 'uppercase', opacity: 0.6 })}>
+          Color Mode
+        </p>
+        <ToggleGroup
+          value={[colorMode]}
+          onValueChange={updateColorMode}
+          className={css({ display: 'flex', flexDirection: 'column', gap: '1' })}
+        >
           <Toggle
             aria-label="Light mode"
             value="light"
             render={(props, state) => {
               const Icon = state.pressed ? RiSunFill : RiSunLine;
               return (
-                <button {...props}>
-                  <Icon size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
+                <button
+                  {...props}
+                  className={css({
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    textStyle: 'body',
+                    fontWeight: state.pressed ? 'bold' : 'normal',
+                  })}
+                >
+                  <Icon size={ICON_SIZE} className={css({ mr: '1' })} />
+                  Light
                 </button>
               );
             }}
@@ -87,18 +113,44 @@ function Footer() {
             render={(props, state) => {
               const Icon = state.pressed ? RiMoonFill : RiMoonLine;
               return (
-                <button {...props}>
-                  <Icon size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
+                <button
+                  {...props}
+                  className={css({
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    textStyle: 'body',
+                    fontWeight: state.pressed ? 'bold' : 'normal',
+                  })}
+                >
+                  <Icon size={ICON_SIZE} className={css({ mr: '1' })} />
+                  Dark
                 </button>
               );
             }}
           />
-          <Toggle aria-label="Match system color mode" value="system">
-            <RiRefreshLine size={ICON_SIZE} className={css({ cursor: 'pointer', mr: '1', display: 'inline' })} />
-          </Toggle>
+          <Toggle
+            aria-label="Match system color mode"
+            value="system"
+            render={(props, state) => (
+              <button
+                {...props}
+                className={css({
+                  display: 'flex',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                  textStyle: 'body',
+                  fontWeight: state.pressed ? 'bold' : 'normal',
+                })}
+              >
+                <RiRefreshLine size={ICON_SIZE} className={css({ mr: '1' })} />
+                System
+              </button>
+            )}
+          />
         </ToggleGroup>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 
@@ -136,8 +188,19 @@ export function Main() {
       <section className={css({ p: '2', flex: '1' })}>
         <Outlet />
       </section>
-      <section className={css({ p: '2', mt: 'auto' })}>
-        <Footer />
+      <section
+        className={css({
+          mt: '8',
+          bg: 'backgroundSecondary',
+          borderTop: '1px solid',
+          borderColor: 'border',
+          width: '100vw',
+          p: '4',
+        })}
+      >
+        <div className={css({ maxWidth: '1000px' })}>
+          <Footer />
+        </div>
       </section>
     </div>
   );
