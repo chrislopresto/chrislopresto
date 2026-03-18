@@ -15,7 +15,8 @@ export default function Things() {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTags = searchParams.get('tags')?.split(',').filter(Boolean) ?? [];
 
-  const filteredThings = activeTags.length > 0 ? things.filter((t) => t.tags.some((tag) => activeTags.includes(tag))) : things;
+  const filteredThings =
+    activeTags.length > 0 ? things.filter((t) => t.tags.some((tag) => activeTags.includes(tag))) : things;
 
   function toggleTag(tag: string) {
     setSearchParams(

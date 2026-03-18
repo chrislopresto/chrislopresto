@@ -137,7 +137,7 @@ export const things: Thing[] = [
   },
   {
     name: 'Timex Marlin Automatic Snoopy Edition',
-    description: 'Here\'s the World War I flying ace...',
+    description: "Here's the World War I flying ace...",
     image: timexMarlinSnoopy,
     link: 'https://www.ablogtowatch.com/timex-marlin-automatic-snoopy-edition-watch/',
     tags: ['watches'],
