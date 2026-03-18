@@ -6,6 +6,7 @@ import {
   RiGithubFill,
   RiLinkedinBoxFill,
   RiTwitterXFill,
+  RiBlueskyFill,
   RiSunFill,
   RiSunLine,
   RiMoonFill,
@@ -73,6 +74,14 @@ function Footer() {
           <RiLinkedinBoxFill size={ICON_SIZE} className={css({ mr: '1' })} />
           <VisuallyHidden>LinkedIn</VisuallyHidden>
           chrislopresto
+        </a>
+        <a
+          href="https://bsky.app/profile/chrislopresto.bsky.social"
+          className={css({ display: 'flex', mb: '1', textStyle: 'body' })}
+        >
+          <RiBlueskyFill size={ICON_SIZE} className={css({ mr: '1' })} />
+          <VisuallyHidden>Bluesky</VisuallyHidden>
+          @chrislopresto.bsky.social
         </a>
       </div>
 

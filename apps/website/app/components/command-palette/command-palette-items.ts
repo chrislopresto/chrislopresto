@@ -8,6 +8,7 @@ import {
   RiTwitterXFill,
   RiGithubFill,
   RiLinkedinBoxFill,
+  RiBlueskyFill,
   RiSunLine,
   RiSunFill,
   RiMoonLine,
@@ -80,4 +81,5 @@ export const socials: SocialItem[] = [
   { label: 'Twitter / X', url: 'https://twitter.com/chrislopresto', icon: RiTwitterXFill },
   { label: 'GitHub', url: 'https://github.com/chrislopresto', icon: RiGithubFill },
   { label: 'LinkedIn', url: 'https://www.linkedin.com/in/chrislopresto', icon: RiLinkedinBoxFill },
+  { label: 'Bluesky', url: 'https://bsky.app/profile/chrislopresto.bsky.social', icon: RiBlueskyFill },
 ];
