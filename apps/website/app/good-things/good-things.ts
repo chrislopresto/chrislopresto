@@ -44,7 +44,7 @@ export const things: Thing[] = [
     description: 'Nice notebook.',
     image: lochbyPocketNotebook,
     link: 'https://www.lochby.com/collections/notebooks/products/pocket-size-notebooks',
-    tags: ['notes'],
+    tags: ['writing'],
   },
   {
     name: 'Shigeru Kawai SK-3 Grand Piano',
@@ -79,7 +79,7 @@ export const things: Thing[] = [
     description: 'Ideas click.',
     image: tactileTurnSlimSwitchPen,
     link: 'https://tactileturn.com/products/slim-switch-pen?variant=52409866781040',
-    tags: ['notes'],
+    tags: ['writing'],
   },
   {
     name: 'Breitling Superocean',
@@ -114,7 +114,7 @@ export const things: Thing[] = [
     description: 'Notes.',
     image: obsidian,
     link: 'https://obsidian.md/',
-    tags: ['notes'],
+    tags: ['writing'],
   },
   {
     name: 'New York Times Crossword',
