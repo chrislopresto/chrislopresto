@@ -50,7 +50,7 @@
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitest/browser": "^4.1.0",
+    "@vitest/browser": "^4.1.8",
     "@vitest/browser-playwright": "^4.1.0",
     "autoprefixer": "^10.4.27",
     "chromatic": "^15.2.0",
