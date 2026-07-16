@@ -23,6 +23,7 @@ export default [
       './routes/thoughts/living-style-guide-driven-development/transcript.tsx',
     ),
   ]),
+  route('/music', './music/route.tsx'),
   route(
     '/thoughts/hot-swapping-our-rails-front-end-in-secret/slides',
     './routes/thoughts/hot-swapping-our-rails-front-end-in-secret/slides.tsx',
