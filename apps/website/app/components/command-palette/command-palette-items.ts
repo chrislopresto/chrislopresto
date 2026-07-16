@@ -2,6 +2,7 @@ import { href } from 'react-router';
 import {
   RiHomeLine,
   RiHeart2Line,
+  RiMusic2Line,
   RiChat1Line,
   RiPresentationLine,
   RiBookOpenLine,
@@ -33,6 +34,12 @@ export type SocialItem = {
 export const pages: PageItem[] = [
   { label: 'Home', path: href('/'), icon: RiHomeLine },
   { label: 'Good Things', path: href('/good-things'), icon: RiHeart2Line, keywords: ['appreciate', 'favorites'] },
+  {
+    label: 'Music',
+    path: href('/music'),
+    icon: RiMusic2Line,
+    keywords: ['session', 'piano', 'keys', 'gigs', 'liner notes'],
+  },
   { label: 'Thoughts', path: href('/thoughts'), icon: RiChat1Line },
   {
     label: 'Hot Swapping Our Rails Front End in Secret',

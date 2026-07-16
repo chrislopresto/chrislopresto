@@ -15,7 +15,7 @@ export function Nav({ css: cssProp = {} }: NavProps) {
       <Link
         render={
           <NavLink
-            to="/"
+            to="/music"
             className={css({
               textDecoration: 'none',
               textUnderlineOffset: '14px',
@@ -25,7 +25,7 @@ export function Nav({ css: cssProp = {} }: NavProps) {
               _focus: { textDecoration: 'underline' },
             })}
           >
-            Home
+            Music
           </NavLink>
         }
       />
