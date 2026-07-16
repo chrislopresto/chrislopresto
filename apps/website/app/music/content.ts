@@ -38,6 +38,20 @@ export type SoundcloudTrack = {
   soundcloudTrackId: string;
 };
 
+export type GalleryPhoto = {
+  src: string;
+  alt: string;
+  /** Intrinsic pixel dimensions — set so the browser reserves space (no layout shift). */
+  width: number;
+  height: number;
+  /** Typed caption printed on the photo mount. */
+  caption: string;
+  /** Optional handwritten aside, set in the Caveat pencil hand. Leave off for a quiet print. */
+  hand?: string;
+  /** Which way the print is tipped in. Alternates by default; set to override. */
+  tilt?: 'left' | 'right';
+};
+
 export type ContactParts = {
   email: { user: string; domain: string; tld: string };
   phone: { country: string; area: string; prefix: string; line: string };
@@ -47,6 +61,16 @@ const youtubePoster = (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jp
 
 import vimeoBreadAndButterPoster from './images/vimeo-kimmel-bread-and-butter-poster.jpg';
 import vimeoNinetyNineProblemsPoster from './images/vimeo-kimmel-99-problems-poster.jpg';
+
+import galleryPaintedPiano from './images/chris-lopresto-la-vibes.jpg';
+import galleryFestival from './images/chris-lopresto-festival.jpg';
+import galleryRedWash from './images/chris-lopresto-stage-rig.jpg';
+import gallerySynth from './images/chris-lopresto-electro-vibes.jpg';
+import galleryWorldCafe from './images/chris-lopresto-delaware-vibes.jpg';
+import gallerySoundcheck from './images/chris-lopresto-sound-check-rig.jpg';
+import gallerySpotlight from './images/chris-lopresto-stage-frontlit.jpg';
+import galleryXFactor from './images/chris-lopresto-x-factor.jpg';
+import galleryHeadshot from './images/chris-lopresto-headshot.jpg';
 
 export const flagshipVideo: VideoContent = {
   provider: 'youtube',
@@ -186,6 +210,82 @@ export const soundcloudTracks: SoundcloudTrack[] = [
   },
 ];
 
+/**
+ * The photo insert — candid prints tucked in the gatefold. Add or edit an
+ * entry to add a photo; `caption` is the typed line and `hand` (optional) is
+ * the pencil scrawl beneath it.
+ */
+export const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: galleryPaintedPiano,
+    alt: 'Chris LoPresto in sunglasses playing a hand-painted upright piano covered in op-art eyes and swirls',
+    width: 1440,
+    height: 1440,
+    caption: 'Painted upright.',
+    hand: 'Los Angeles, CA',
+  },
+  {
+    src: galleryFestival,
+    alt: 'View from behind the keyboard rig facing a large daytime festival crowd under palm trees',
+    width: 720,
+    height: 431,
+    caption: 'Festival vibes.',
+    hand: '101',
+  },
+  {
+    src: galleryRedWash,
+    alt: 'Chris LoPresto head down at the keys under a deep red stage wash',
+    width: 1365,
+    height: 2048,
+    caption: 'A red rig',
+  },
+  {
+    src: gallerySynth,
+    alt: 'Close-up of two hands working a small synthesizer under deep red light',
+    width: 1365,
+    height: 2048,
+    caption: 'Nord vibes',
+  },
+  {
+    src: galleryWorldCafe,
+    alt: 'Trio on stage at World Cafe Live in Wilmington — keys, upright bass, and acoustic guitar',
+    width: 960,
+    height: 539,
+    caption: 'World Cafe Live',
+    hand: 'Wilmington, DE',
+  },
+  {
+    src: gallerySoundcheck,
+    alt: 'Chris LoPresto in a beanie and scarf at a mic behind a keyboard and rack gear during soundcheck',
+    width: 381,
+    height: 381,
+    caption: 'Soundcheck',
+    hand: 'AC on',
+  },
+  {
+    src: gallerySpotlight,
+    alt: 'Chris LoPresto singing into a mic at the keys under a single hard side light',
+    width: 400,
+    height: 500,
+    caption: 'One mic, one light.',
+  },
+  {
+    src: galleryXFactor,
+    alt: 'A singer performing to a mic on a sunny patio with a grand piano and two people seated, during an X Factor session',
+    width: 380,
+    height: 286,
+    caption: 'X Factor Semifinalists',
+    hand: 'Hamptons',
+  },
+  {
+    src: galleryHeadshot,
+    alt: 'Black-and-white self-portrait of Chris LoPresto in aviator sunglasses and a henley',
+    width: 744,
+    height: 841,
+    caption: 'Checkpoint',
+  },
+];
+
 export const tvCredits = [
   { show: 'Late Night With David Letterman', detail: 'Roc Nation / Epic Records recording artist Hugo' },
   { show: 'Jimmy Kimmel Live!', detail: 'Roc Nation / Epic Records recording artist Hugo' },
@@ -220,7 +320,7 @@ export const gear = [
   { kind: 'Bass', items: 'Lakland DJ-4' },
   { kind: 'Acoustic guitar', items: 'Taylor 614ce' },
   {
-    kind: 'Selected past keyboards',
+    kind: 'Past keyboards',
     items: 'Nord Lead 4 · Axiom Pro 61 · Yamaha Motif XS8',
     aside: '(no keytars, sadly)',
   },

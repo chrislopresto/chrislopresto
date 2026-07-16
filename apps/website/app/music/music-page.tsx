@@ -6,6 +6,7 @@ import {
   contactParts,
   education,
   flagshipVideo,
+  galleryPhotos,
   gear,
   identityLines,
   reelVideos,
@@ -511,6 +512,21 @@ const salvageNoteCss: SystemStyleObject = {
   margin: '.8rem 0 0',
 };
 
+/* ── The insert: contact sheet ───────────────────────────────────────── */
+
+/** Masonry via CSS columns — mixed portrait/landscape prints flow like snapshots. */
+const galleryCss: SystemStyleObject = {
+  columns: '1',
+  columnGap: 'clamp(1rem, 3vw, 1.8rem)',
+  '@media (min-width: 560px)': { columns: '2' },
+  '@media (min-width: 900px)': { columns: '3' },
+};
+
+const galleryItemCss: SystemStyleObject = {
+  breakInside: 'avoid',
+  marginBottom: 'clamp(1rem, 3vw, 1.8rem)',
+};
+
 /* ── Gig triangle + booking ──────────────────────────────────────────── */
 
 const bookingGridCss: SystemStyleObject = {
@@ -760,7 +776,7 @@ export function MusicPage() {
           ))}
         </ol>
 
-        <h3 className={css(acetateHeadingCss)}>Unreleased acetates · SoundCloud</h3>
+        <h3 className={css(acetateHeadingCss)}>Unreleased · SoundCloud</h3>
         <ol className={css(tracklistCss)}>
           {soundcloudTracks.map((track) => (
             <li key={track.no} className={css(trackCss)}>
@@ -811,7 +827,7 @@ export function MusicPage() {
             </ul>
           </div>
           <div>
-            <h3 className={css(fineColHeadingCss)}>Recorded with</h3>
+            <h3 className={css(fineColHeadingCss)}>Gear</h3>
             <ul className={css(fineListCss)}>
               {gear.map((item) => (
                 <li key={item.kind}>
@@ -862,6 +878,31 @@ export function MusicPage() {
         </div>
       </MusicSection>
 
+      {/* ── The insert: contact sheet ─────────────────────────────── */}
+      <MusicSection tone="inner" id="photos" aria-labelledby="photos-title">
+        <SideLabel disc="As seen in" cat="Photos · Undated" />
+        <SectionHeading id="photos-title">Selected photos</SectionHeading>
+        <SectionNote>On and off the road. Unordered. Somewhat filtered.</SectionNote>
+
+        <div className={css(galleryCss)}>
+          {galleryPhotos.map((photo, index) => (
+            <div key={photo.src} className={css(galleryItemCss)}>
+              <TippedPhoto
+                src={photo.src}
+                alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
+                loading="lazy"
+                caption={photo.caption}
+                hand={photo.hand}
+                tilt={photo.tilt ?? (index % 2 === 0 ? 'right' : 'left')}
+                css={{ maxWidth: '100%' }}
+              />
+            </div>
+          ))}
+        </div>
+      </MusicSection>
+
       {/* ── Gig triangle + booking ────────────────────────────────── */}
       <MusicSection tone="paperDeep" id="booking" aria-labelledby="booking-title">
         <div className={css(bookingGridCss)}>
@@ -870,7 +911,7 @@ export function MusicPage() {
           </figure>
 
           <div>
-            <EyebrowStamp>Booking · Sessions</EyebrowStamp>
+            <EyebrowStamp>Booking</EyebrowStamp>
             <SectionHeading id="booking-title" css={{ marginBottom: '1.2rem' }}>
               Please reach out
             </SectionHeading>

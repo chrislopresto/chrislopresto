@@ -70,7 +70,7 @@ export const GigTriangle: FC<{ css?: SystemStyleObject }> = ({ css: cssProp = {}
       transform="rotate(-4 180 190)"
       style={{ fill: 'var(--music-red, #A6472E)' }}
     >
-      need two.
+      have two+
     </text>
   </svg>
 );
