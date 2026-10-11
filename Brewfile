@@ -1,2 +1,1 @@
-brew 'pnpm'
-brew 'tilt'
+brew 'mise'
