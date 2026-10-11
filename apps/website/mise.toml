@@ -1,0 +1,15 @@
+# Node and pnpm are inherited from the repository root.
+[tools]
+tilt = "0.33.22"
+
+[tasks.dev]
+description = "Start the website, Storybook, and test watcher in Tilt"
+run = "tilt up"
+
+[tasks."dev:down"]
+description = "Stop the website Tilt environment"
+run = "tilt down"
+
+[tasks.storybook]
+description = "Start Storybook without Tilt"
+run = "pnpm run storybook"

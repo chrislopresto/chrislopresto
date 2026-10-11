@@ -1,0 +1,39 @@
+[settings]
+idiomatic_version_file_enable_tools = ["node", "pnpm"]
+
+[tools]
+# Keep the existing runtime and package-manager declarations authoritative.
+node = "{{ read_file(path=config_root ~ '/.node-version') | trim }}"
+
+[tasks.setup]
+description = "Install workspace dependencies (mise installs the tools first)"
+run = "pnpm install --frozen-lockfile"
+
+[tasks.build]
+description = "Build workspace packages"
+run = "pnpm run -r build"
+
+[tasks.test]
+description = "Run workspace tests"
+run = "pnpm run -r test"
+
+[tasks.lint]
+description = "Lint workspace packages"
+run = "pnpm run -r lint"
+
+[tasks.typecheck]
+description = "Check workspace package types"
+run = "pnpm run -r typecheck"
+
+[tasks.format]
+description = "Format project files"
+run = "pnpm run format:write"
+
+[tasks."format:check"]
+description = "Check project formatting"
+run = "pnpm run format:check"
+
+[tasks.check]
+description = "Check formatting, lint, types, and tests"
+depends = ["format:check", "lint", "typecheck", "test"]
+
